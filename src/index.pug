@@ -1,4 +1,8 @@
 include html/includes/button/button.pug
+include html/includes/text_input/text_input.pug
+include html/includes/drop_down/drop_down.pug
+include html/includes/checkbox/checkbox.pug
+include html/mixins/checkbox_arrow.pug
 
 doctype html
 html
@@ -10,3 +14,9 @@ html
     body
        +button("button button_filled")
        +button("button button_gradiented")
+       br
+       +input("input input_default")
+       br
+       +dropdown("dropdown")
+       br
+       +checkbox("checkbox")
