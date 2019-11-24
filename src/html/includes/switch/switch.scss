@@ -1,0 +1,46 @@
+.toggle {
+    position: relative; width: 40px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    &__checkbox {
+        display: none;
+    }
+
+    &__label {
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+        height: 20px;
+        padding: 0; 
+        line-height: 20px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 10px;
+    }
+
+    &__label:before {
+        content: "";
+        display: block; width: 12px; height: 12px;//margin: 4px;
+        background: rgba(31, 32, 65, 0.25);
+        
+        position: absolute; top: 4; bottom: 4;
+        right: 24px;
+        border-radius: 10px;
+    }
+
+    &__checkbox:checked + &__label {
+        background-color: #FFF;
+    }
+
+    &__checkbox:checked + &__label, &__checkbox:checked + &__label:before {
+        border-color: #BC9CFF
+    }
+
+    &__checkbox:checked + &__label {
+        margin-left: 0;
+    }
+
+    &__checkbox:checked + &__label:before {
+        right: 4px; 
+        background:linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        //box-shadow: 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
+    }
+}
