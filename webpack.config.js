@@ -27,18 +27,18 @@ const config = {
       rules: [
           {
                 test: /\.pug$/,
-                use: [
-                        "pug-loader",
-                    ],
+                loader: "pug-loader"
             },
           {
               test: /\.scss$/,
+
               use: [
                   MiniCssExtractPlugin.loader,
                   {
+                      
                       loader: "css-loader",
                       options: {
-                          modules: true
+                          modules: false
                       },    
                   },
                   "sass-loader"

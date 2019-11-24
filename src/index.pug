@@ -1,3 +1,5 @@
+include html/includes/button/button.pug
+
 doctype html
 html
     head
@@ -6,4 +8,5 @@ html
         meta(http-equiv="X-UA-Compatible" content="ie=edge")
 
     body
-        h1 YeS
+       +button("button button_filled")
+       +button("button button_gradiented")
