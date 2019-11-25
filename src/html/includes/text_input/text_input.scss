@@ -1,4 +1,5 @@
 .input {
+    position: relative;
     outline: none;
     width: 320px;
     height: 44px;
@@ -12,11 +13,36 @@
     line-height: 18px;
     padding-left: 15px;
 
-    /* Dark 25% */
     &_default {
         border: 1px solid rgba(31, 32, 65, 0.25);
         color: rgba(31, 32, 65, 0.25);
     }
+
+   &__subscription {
+       position: relative;
+       display:inline-block;
+   }
+
+   &__button {
+    width: 42px;
+    height: 42px;
+    position: absolute; /* to align it to right and positon it over the input */
+    top: 1px;
+    right: 1px;
+    border-radius: 4px;
+    background: #FFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &_gradient-text {
+        background: -webkit-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+   }
+
 
     &:hover, &:focus {
         border: 1px solid rgba(31, 32, 65, 0.5);

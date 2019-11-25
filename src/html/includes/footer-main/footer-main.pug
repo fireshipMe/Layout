@@ -1,0 +1,33 @@
+include ../text_input/text_input.pug
+
+div(class="footer-main")
+    div(class="footer-main__company-info")
+        div(class="footer-main__logo")
+        div(class="footer-main__logo-description")
+            a Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+    div(class="footer-main__links")
+        div(class="footer-main__navigation")
+            h3(class="footer-main__list-header") NAVIGATION
+            ul(class="footer-main__list")
+                li(class="footer-main__list-regular ") About us
+                li(class="footer-main__list-regular footer-main__list-regular_margined")  News
+                li(class="footer-main__list-regular footer-main__list-regular_margined")  Support
+                li(class="footer-main__list-regular footer-main__list-regular_margined")  Products
+        div(class="footer-main__about-us")
+            h3(class="footer-main__list-header") ABOUT US
+            ul(class="footer-main__list")
+                li(class="footer-main__list-regular ")  Who we are
+                li(class="footer-main__list-regular footer-main__list-regular_margined")  Our team
+                li(class="footer-main__list-regular footer-main__list-regular_margined")  Careers
+                li(class="footer-main__list-regular footer-main__list-regular_margined")  Investors
+        div(class="footer-main__support")
+            h3(class="footer-main__list-header") SUPPORT
+            ul(class="footer-main__list")
+                li(class="footer-main__list-regular ")  Documentation
+                li(class="footer-main__list-regular footer-main__list-regular_margined")  Community
+                li(class="footer-main__list-regular footer-main__list-regular_margined")  Get in touch
+        div(class="footer-main__subscribe")
+            h3(class="footer-main__list-header") SUBSCRIBE TO OUR NEWSLETTER
+            a(class="footer-main__regular-text") Receive our latest news and promotions in your inbox!
+            span(class="footer-main__input")
+                +input("input input_default", true)

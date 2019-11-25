@@ -1,2 +1,9 @@
-mixin input(type)
-    input(value="Email", type="text" class= type)
+mixin input(type, subscriptional)
+    if subscriptional
+        div(class="input__subscription")
+            input(placeholder="Email", type="text" class= type)
+            div(class="input__button")
+                <i class="tiny material-icons input__button_gradient-text">arrow_forward</i>
+            
+    else
+        input(placeholder="Email", type="text" class= type)
