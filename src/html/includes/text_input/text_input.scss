@@ -1,51 +1,50 @@
 .input {
+  position: relative;
+  outline: none;
+  width: 320px;
+  height: 44px;
+  background: #ffffff;
+
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  font-family: "Montserrat";
+  font-size: 14px;
+  line-height: 18px;
+  padding-left: 15px;
+
+  &_default {
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    color: rgba(31, 32, 65, 0.25);
+  }
+
+  &__subscription {
     position: relative;
-    outline: none;
-    width: 320px;
-    height: 44px;
-    background: #FFFFFF;
-    
-    box-sizing: border-box;
-    border-radius: 4px;
+    display: inline-block;
+  }
 
-    font-family: "Montserrat";
-    font-size: 14px;
-    line-height: 18px;
-    padding-left: 15px;
-
-    &_default {
-        border: 1px solid rgba(31, 32, 65, 0.25);
-        color: rgba(31, 32, 65, 0.25);
-    }
-
-   &__subscription {
-       position: relative;
-       display:inline-block;
-   }
-
-   &__button {
+  &__button {
     width: 42px;
     height: 42px;
     position: absolute; /* to align it to right and positon it over the input */
     top: 1px;
     right: 1px;
     border-radius: 4px;
-    background: #FFF;
+    background: #fff;
 
     display: flex;
     justify-content: center;
     align-items: center;
     &_gradient-text {
-        background: -webkit-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      background: -webkit-linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+  }
 
-   }
-
-
-    &:hover, &:focus {
-        border: 1px solid rgba(31, 32, 65, 0.5);
-        color: rgba(31, 32, 65, 0.75);
-    }
+  &:hover,
+  &:focus {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    color: rgba(31, 32, 65, 0.75);
+  }
 }

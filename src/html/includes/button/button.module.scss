@@ -12,6 +12,7 @@
         line-height: 15px;
         text-transform: uppercase;
         color: #FFF;
+
         
     }
 
@@ -23,6 +24,19 @@
         background-clip: padding-box, border-box;        
         line-height: 15px;
         text-transform: uppercase;
+
     }
 
+    &_login-button {
+        width: 79px;
+        height: 34px;
+    }
+
+    &_register-button {
+        width: 101px;
+        height: 34px;
+    }
+
+
+    
 }

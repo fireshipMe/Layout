@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 
 @import "src/html/includes/button/button.module.scss";
 @import "src/html/includes/text_input/text_input.scss";
@@ -8,7 +8,8 @@
 @import "src/html/includes/switch/switch.scss";
 @import "src/html/includes/footer/footer.scss";
 @import "src/html/includes/footer-main/footer-main.scss";
+@import "src/html/includes/header/header.scss";
 
 body {
-    background: #E5E5E5;
+  background: #e5e5e5;
 }

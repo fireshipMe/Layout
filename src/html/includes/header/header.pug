@@ -1,0 +1,15 @@
+include ../button/button.pug
+
+div(class="header")
+    div(class="header__logo")
+        div(class="header__links")
+            a(class="header__text header__text_bold") Home
+            a(class="header__text header__text_regular-spaced") About us
+            a(class="header__text header__text_regular-spaced") Services 
+            a(class="header__text header__text_regular-spaced") Careers 
+            a(class="header__text header__text_regular-spaced") News
+            a(class="header__text header__text_regular-spaced") Documentation 
+        div(class="header__buttons") 
+            +button("button button_gradiented button_login-button", "LOGIN")
+            span(class="header__register-button")
+                +button("button button_filled button_register-button", "REGISTER")
