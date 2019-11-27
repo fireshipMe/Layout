@@ -9,7 +9,17 @@
 @import "src/html/includes/footer/footer.scss";
 @import "src/html/includes/footer-main/footer-main.scss";
 @import "src/html/includes/header/header.scss";
+@import "src/html/views/landing/landing.scss";
+@import "src/html/includes/find_card/find_card.scss";
 
 body {
-  background: #e5e5e5;
+  margin: 0 0 250px;
+  padding: 0;
 }
+
+html {
+  position: relative;
+  min-height:100%;
+}
+
+
