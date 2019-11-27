@@ -2,11 +2,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const webpack = require('webpack');
+
 const path = require('path');
 
 const config = {
   entry: {
-    app: './src/app.js'
+    app: './src/js/index.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -30,7 +32,16 @@ const config = {
     new CopyWebpackPlugin([{
       from: './src/images',
       to: './images'
-    }])
+    }]),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      "window.jQuery": "jquery'",
+      "window.$": "jquery"      
+
+    })
+
+
   ],
   module: {
     rules: [
@@ -59,6 +70,16 @@ const config = {
           loader: 'url-loader',
         }
         ]
+      },
+      {
+        test: /\.js$/,
+        include: path.resolve(__dirname, 'src/js'),
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: 'env'
+          }
+        }
       }
     ]
   }

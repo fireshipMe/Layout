@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap);
+@import url(//fonts.googleapis.com/css?family=Quicksand);
 .button {
   outline: none;
   border: none;
@@ -13,6 +14,23 @@
     line-height: 15px;
     text-transform: uppercase;
     color: #FFF; }
+  .button_long {
+    width: 320px; }
+  .button__arrow {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .button__arrow_white {
+      color: white; }
+  .button_arrowed {
+    position: relative;
+    display: inline-block; }
   .button_gradiented {
     color: #BC9CFF;
     border: double 2px transparent;
@@ -25,7 +43,7 @@
     width: 79px;
     height: 34px; }
   .button_register-button {
-    width: 101px;
+    width: 196px;
     height: 34px; }
 
 .input {
@@ -67,7 +85,7 @@
     color: rgba(31, 32, 65, 0.75); }
 
 .dropdown {
-  width: 266px;
+  width: 320px;
   height: 44px;
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -88,6 +106,17 @@
     display: flex;
     justify-content: center;
     align-items: center; }
+  .dropdown__text {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    /* or 129% */
+    display: flex;
+    align-items: center;
+    /* Dark 75% */
+    color: rgba(31, 32, 65, 0.75); }
   .dropdown_date-dropdown {
     width: 150px; }
 
@@ -204,8 +233,7 @@
       -webkit-text-fill-color: transparent; }
 
 .footer-main {
-  display: table;
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 1440px;
@@ -327,25 +355,103 @@
   .header__links {
     position: absolute;
     margin-top: 11px;
-    margin-left: 297px;
+    margin-left: 390px;
     width: 527px;
     height: 21px; }
   .header__buttons {
     position: absolute;
-    width: 210px;
+    width: 310px;
     margin-top: 3px;
     margin-left: 960px; }
   .header__register-button {
     margin-left: 30px; }
+  .header__icon {
+    font-size: 24px;
+    line-height: 20px;
+    /* identical to box height */
+    align-items: center;
+    text-align: center; }
+    .header__icon_grey {
+      color: rgba(31, 32, 65, 0.5); }
 
 .landing {
   background-image: url("/images/landing-background.png");
+  background-repeat: no-repeat;
   width: 1534px;
   height: 1022px;
   left: -47px;
   top: -61px; }
+  .landing__find-card {
+    position: absolute;
+    width: 380px;
+    height: 374px;
+    left: 140px;
+    top: 140px; }
+  .landing__words {
+    position: absolute;
+    width: 297px;
+    height: 48px;
+    left: 1009px;
+    top: 834px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    /* or 171% */
+    text-align: right;
+    /* Dark 75% */
+    color: rgba(31, 32, 65, 0.75); }
+
+.find-card {
+  position: absolute;
+  width: 380px;
+  height: 374px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px; }
+  .find-card__header {
+    position: relative;
+    margin-top: 40px;
+    margin-left: 30px;
+    width: 320px;
+    height: 60px;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    /* Dark 100% */
+    color: #1f2041; }
+  .find-card__dropdown {
+    display: inline-block;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-transform: uppercase;
+    /* Dark 100% */
+    color: #1f2041; }
+    .find-card__dropdown_left {
+      margin-left: 30px; }
+    .find-card__dropdown_right {
+      margin-left: 20px; }
+    .find-card__dropdown_lowest {
+      margin-left: 30px; }
+  .find-card__button {
+    width: 320px;
+    height: 44px;
+    margin-left: 30px;
+    margin-top: 31px; }
 
 body {
-  margin: 0;
+  margin: 0 0 250px;
   padding: 0; }
+
+html {
+  position: relative;
+  min-height: 100%; }
 
