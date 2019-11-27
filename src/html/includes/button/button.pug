@@ -1,2 +1,10 @@
-mixin button(type, text)
-    button(class= type)= text
+mixin button(type, text, arrowed)
+    if arrowed
+        div(class="button_arrowed")
+            button(class= type)= text
+            div(class="button__arrow")
+                <i class="tiny material-icons button__arrow_white">arrow_forward</i>
+    else
+        button(class= type)= text
+
+

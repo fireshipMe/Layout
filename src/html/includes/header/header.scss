@@ -35,19 +35,31 @@
   &__links {
     position: absolute;
     margin-top: 11px;
-    margin-left:297px;
+    margin-left:390px;
     width: 527px;
     height: 21px;
   }
 
   &__buttons {
     position: absolute;
-    width: 210px;
+    width: 310px;
     margin-top:3px;
     margin-left: 960px;
   }
 
   &__register-button {
     margin-left: 30px;
+  }
+
+  &__icon {
+    font-size: 24px;
+    line-height: 20px;
+    /* identical to box height */
+
+    align-items: center;
+    text-align: center;
+    &_grey{
+      color: rgba(31, 32, 65, 0.5);
+    }
   }
 }

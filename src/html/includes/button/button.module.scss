@@ -16,6 +16,32 @@
         
     }
 
+    &_long {
+        width: 320px;
+    }
+
+    &__arrow {
+        width: 44px;
+        height: 44px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &_white {
+            color: white;
+        }
+        
+    }
+
+    &_arrowed {
+        position: relative;
+        display: inline-block;
+    }
+
     &_gradiented {
         color: #BC9CFF;
         border: double 2px transparent;
@@ -33,7 +59,7 @@
     }
 
     &_register-button {
-        width: 101px;
+        width: 196px;
         height: 34px;
     }
 

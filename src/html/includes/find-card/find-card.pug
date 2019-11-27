@@ -1,0 +1,17 @@
+include ../drop_down/drop_down.pug
+include ../button/button.pug
+
+div(class="find-card")
+    div(class="find-card__header")
+        p Найдем номера под ваши желания
+    div(class="find-card__dropdown find-card__dropdown_left")
+        p прибытие
+        +dropdown("dropdown dropdown_date-dropdown")
+    div(class="find-card__dropdown find-card__dropdown_right")
+        p выезд
+        +dropdown("dropdown dropdown_date-dropdown")
+    div(class="find-card__dropdown find-card__dropdown_lowest")
+        p гости
+        +dropdown("dropdown")
+    div(class="find-card__button")
+        +button("button button_filled button_long", "ПОДОБРАТЬ НОМЕР", true)
