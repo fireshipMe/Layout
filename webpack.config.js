@@ -74,6 +74,7 @@ const config = {
       {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src/js'),
+        include: path.resolve(__dirname, 'src/html/includes/drop_down'),
         use: {
           loader: 'babel-loader',
           options: {

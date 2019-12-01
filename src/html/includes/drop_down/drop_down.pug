@@ -1,8 +1,9 @@
 link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
 
-mixin dropdown(type, text)
-    div(class= type)
-        div(class="dropdown__text") 
-            p= text
-        div(class="dropdown__arrow") <i class="tiny material-icons">keyboard_arrow_down</i>
-    
+mixin dropdown(type, id, text)
+    div(class="dropdown__wrapper")
+            
+        input(id= id placeholder= text, type="text" class= type  data-range="true")
+        label(for= id) 
+            div(class="input__button")
+                i(class="tiny material-icons") keyboard_arrow_down

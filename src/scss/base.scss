@@ -13,6 +13,10 @@
 @import "src/html/views/landing/landing.scss";
 @import "src/html/includes/find-card/find-card.scss";
 
+@import "vars.scss";
+@import "datepicker.scss";
+
+
 body {
   margin: 0 0 250px;
   padding: 0;

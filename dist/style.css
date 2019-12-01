@@ -95,7 +95,10 @@
   color: rgba(31, 32, 65, 0.75);
   font-size: 14px;
   line-height: 24px;
-  padding-left: 15px; }
+  padding-left: 15px;
+  outline: none; }
+  .dropdown__wrapper {
+    position: relative; }
   .dropdown__arrow {
     width: 44px;
     height: 44px;
@@ -328,6 +331,7 @@
 
 .header {
   display: block;
+  overflow: hidden;
   width: 1440px;
   height: 70px;
   background: #ffffff;
