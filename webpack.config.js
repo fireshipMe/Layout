@@ -58,7 +58,8 @@ const config = {
 
             loader: "css-loader",
             options: {
-              modules: false
+              modules: false,
+              url: false
             },
           },
           "sass-loader"

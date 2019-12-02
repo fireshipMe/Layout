@@ -1,11 +1,18 @@
 .header {
-  display: block;
+  display: flex;
   overflow: hidden;
   width: 1440px;
   height: 70px;
   background: #ffffff;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  &__flex-container {
+    display: flex;
+    flex-direction: row;
+    height: 35px;
+    align-items: baseline;
+  }
   &__logo {
+    display: flex;
     position: absolute;
     margin-top: 15px;
     margin-left: 140px;
@@ -29,30 +36,53 @@
     }
 
     &_regular-spaced {
-      margin-left: 30px;
+      margin-left: 21px;
     }
   }
 
+  &__dropdown-container {
+    display: flex;
+  }
+
+  &__arrow-icon {
+    display: flex;
+    // weird borders for the sake of pixel accuracy
+    margin-left: 1px;
+    padding-bottom: 1px;
+  }
+
+  &__arrow-container {
+    display: flex;
+    width: 24px;
+    height: 21px;
+    line-height: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__links {
+    display:flex;
     position: absolute;
-    margin-top: 11px;
-    margin-left:390px;
-    width: 527px;
+    margin-top: 27px;
+    margin-left:531px;
+    width: 550px;
     height: 21px;
   }
 
   &__buttons {
-    position: absolute;
+    display: flex;
     width: 310px;
-    margin-top:3px;
-    margin-left: 960px;
+    margin-top:18px;
+    padding-left: 996px;
   }
 
   &__register-button {
-    margin-left: 30px;
+    display: flex;
+    margin-left: 20px;
   }
 
   &__icon {
+    display: flex;
     font-size: 24px;
     line-height: 20px;
     /* identical to box height */

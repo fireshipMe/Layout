@@ -1489,7 +1489,7 @@
       monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
       today: 'Today',
       clear: 'Clear',
-      accept: 'Accept',
+      accept: 'Принять',
       dateFormat: 'dd.mm.yyyy',
       timeFormat: 'hh:ii',
       firstDay: 1

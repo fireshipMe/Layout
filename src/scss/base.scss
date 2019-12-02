@@ -15,7 +15,8 @@
 
 @import "vars.scss";
 @import "datepicker.scss";
-
+@import "dropdown.scss";
+@import "fonts.scss";
 
 body {
   margin: 0 0 250px;
@@ -27,4 +28,23 @@ html {
   min-height:100%;
 }
 
-
+a:link
+{
+   color: $dark_shade_50;
+   text-decoration: none;
+}
+a:visited
+{
+   color: $dark_shade_50;
+   text-decoration: none;
+}
+a:hover
+{
+   color: $dark_shade_50;
+   text-decoration: none;
+}
+a:active
+{
+   color: $dark_shade_50;
+   text-decoration: none;
+}
