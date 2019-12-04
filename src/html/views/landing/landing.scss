@@ -1,16 +1,19 @@
 .landing {
+    display: flex;
     background-image: url('/images/landing-background.png');
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    width: 1534px;
-    height: 1022px;
+    background-size: 100vw;
+    width: 100vw;
+    height: 117.05237515225335vh;
     left: -47px;
-    top: -61px;
+    top: 61px;
     &__find-card {
         position: absolute;
         width: 380px;
         height: 374px;
-        left: 140px;
-        top: 140px;
+        left: 10rem;
+        top: 10rem;
     }
 
     &__words {
@@ -31,6 +34,6 @@
 
         /* Dark 75% */
 
-        color: rgba(31, 32, 65, 0.75);
+        color: $dark_shade_75;
     }
 }

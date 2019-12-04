@@ -1,16 +1,46 @@
 .footer-main {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 1440px;
-  height: 372px;
-  background: #ffffff;
-  box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
-  &__bottom-block {
-    height: 70px;
-    width: 1440px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &__top-block {
+    display: flex;
+    width: 100vw;
+    height: 372px;
     background: #ffffff;
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+  }
+
+  &__bottom-block {
+    margin-top: 1px;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 70px;
+    background: #FFFFFF;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  }
+
+  &__copyright {
+    position: absolute;
+    margin-top: 26px;
+    margin-left: 9.71vw;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+    /* Dark 75% */
+
+    color: $dark_shade_75;
+  }
+
+  &__social-media {
+    font-size: 24px;
+    line-height: 23px;
+    margin-left: 82.5vw;
+    margin-top: 23px;
   }
 
   &__company-info {
@@ -25,26 +55,30 @@
     position: absolute;
     top: 104px;
     left: 440px;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
   }
 
   &__navigation {
-    float: left;
-    width: 81px;
-    height: 168px;
+
+    // float: left;
+    width: 150px;
+    height: 143px;
   }
 
   &__about-us {
-    display: inline-block;
-    margin-left: 119px;
-    width: 84px;
+    //display: inline-block;
+    margin-left: 57px;
+    width: 108px;
     height: 168px;
   }
 
   &__support {
-    position: absolute;
-    margin-left: 118px;
-    display: inline-block;
-    width: 113px;
+    // position: absolute;
+    margin-left: 92px;
+    // display: inline-block;
+    width: 149px;
     height: 130px;
   }
 
@@ -57,6 +91,8 @@
     text-transform: uppercase;
     color: #1f2041;
     margin-bottom: 21px;
+    margin-top: 0;
+    margin-left: 2px;
   }
 
   &__list-regular {
@@ -72,12 +108,13 @@
   }
 
   &__input {
-    margin-top: 89px;
+    margin-top: 67px;
+    margin-left: 2px;
     position: absolute;
   }
 
   &__button {
-    flex-grow: 2;
+    //flex-grow: 2;
   }
 
   &__regular-text {
@@ -92,7 +129,12 @@
 
     /* Dark 75% */
 
-    color: rgba(31, 32, 65, 0.75);
+    color: $dark_shade_75;
+
+    &_subscribe {
+      width: 260px;
+      margin-left: 2px;
+    }
   }
   &__list {
     list-style-type: none;
@@ -101,9 +143,11 @@
   }
 
   &__subscribe {
-    width: 220px;
-    height: 84px;
-    float: right;
+    width: 260px;
+    height: 148px;
+    // float: right;
+    margin-left: 51px;
+    white-space: pre-wrap;
   }
 
   &__logo {
@@ -123,7 +167,7 @@
     width: 260px;
     height: 96px;
 
-    margin-top: 20px;
+    margin-top: 16px;
   }
 
 }

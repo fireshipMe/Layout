@@ -1,3 +1,9 @@
+@import "vars.scss";
+@import "datepicker.scss";
+@import "dropdown.scss";
+@import "fonts.scss";
+
+
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 @import url("//fonts.googleapis.com/css?family=Quicksand");
 
@@ -13,19 +19,9 @@
 @import "src/html/views/landing/landing.scss";
 @import "src/html/includes/find-card/find-card.scss";
 
-@import "vars.scss";
-@import "datepicker.scss";
-@import "dropdown.scss";
-@import "fonts.scss";
-
 body {
-  margin: 0 0 250px;
-  padding: 0;
-}
-
-html {
-  position: relative;
-  min-height:100%;
+   padding: 0;
+   margin: 0;
 }
 
 a:link
