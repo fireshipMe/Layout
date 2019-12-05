@@ -139,11 +139,11 @@
     _addButtonsIfNeed() {
 
       if (this.opts.clearButton) {
-        this._addButton('очистить')
+        this._addButton('clear')
       }
 
       if (this.opts.acceptButton) {
-        this._addButton('принять')
+        this._addButton('accept')
       }
     }
 

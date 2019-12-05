@@ -1,19 +1,31 @@
 .landing {
-    display: flex;
     background-image: url('/images/landing-background.png');
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 100vw;
+    background-position: center;
+    background-size: 1440px;
+    display: flex;
+    flex-direction: column;
     width: 100vw;
-    height: 117.05237515225335vh;
+    min-height: 101.09622411693057vh;
+    height: 100%;
     left: -47px;
     top: 61px;
     &__find-card {
         position: absolute;
+        display: flex;
         width: 380px;
         height: 374px;
-        left: 10rem;
-        top: 10rem;
+        left: 9.722vw;
+        top: 140px;
+        @media screen and (max-width: 768px) {
+            left: 13.472vw;
+        }
+
+        @media screen and (max-width: 480px) {
+            left: 0;
+            top: 70px;
+        }
     }
 
     &__words {

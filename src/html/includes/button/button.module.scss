@@ -18,6 +18,9 @@
 
     &_long {
         width: 320px;
+        @media screen and (max-width: 480px) {
+            width: 84vw;
+        }
     }
 
     &__arrow {
@@ -61,6 +64,11 @@
     &_register-button {
         width: 196px;
         height: 34px;
+    }
+
+    &_create-account {
+        width: 99px;
+        height: 44px;
     }
 
 

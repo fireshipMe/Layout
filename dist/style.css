@@ -1,5 +1,717 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap);
-@import url(//fonts.googleapis.com/css?family=Quicksand);
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+/* Colors */
+/* \Colors */
+.datepicker__cells {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.datepicker__cell {
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-family: MontseratRegular;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  z-index: 1; }
+
+.datepicker__cell.-focus- {
+  background: transparent;
+  position: relative; }
+  .datepicker__cell.-focus-::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+    opacity: 0.25; }
+
+.datepicker__cell.-current- {
+  color: #fff;
+  font-family: MontseratBold;
+  background: linear-gradient(180deg, #6fcf97 0, #66d2ea 100%); }
+
+.datepicker__cell.-current-.-focus- {
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2); }
+
+.datepicker__cell.-in-range- {
+  background: transparent;
+  position: relative;
+  color: #4a4a4a;
+  border-radius: 0; }
+  .datepicker__cell.-in-range-::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+    opacity: 0.25; }
+
+.datepicker__cell.-in-range-.-focus- {
+  background-color: rgba(92, 196, 239, 0.2); }
+
+.datepicker__cell.-disabled- {
+  cursor: default;
+  color: #aeaeae; }
+
+.datepicker__cell.-disabled-.-focus- {
+  color: #aeaeae; }
+
+.datepicker__cell.-disabled-.-in-range- {
+  color: #a1a1a1; }
+
+.datepicker__cell.-disabled-.-current-.-focus- {
+  color: #aeaeae; }
+
+.datepicker__cell.-range-from- {
+  border-radius: 50%;
+  position: relative; }
+  .datepicker__cell.-range-from-::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+    opacity: 0.25; }
+  .datepicker__cell.-range-from-.-selected-::after {
+    width: 50%; }
+  .datepicker__cell.-range-from-.-range-to-::after {
+    display: none; }
+
+.datepicker__cell.-range-to- {
+  border-radius: 50%;
+  position: relative; }
+  .datepicker__cell.-range-to-::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%);
+    opacity: 0.25; }
+  .datepicker__cell.-range-to-.-selected-::after {
+    width: 50%; }
+
+.datepicker__cell.-selected-,
+.datepicker__cell.-selected-.-current- {
+  font-family: MontseratBold;
+  color: #fff;
+  background: linear-gradient(180deg, #bc9cff 0, #8ba4f9 100%); }
+
+.datepicker__cell.-selected-.-focus- {
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2); }
+
+.datepicker__cell:empty {
+  cursor: default; }
+
+.datepicker__days-names {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 5px 0 3px; }
+
+.datepicker__day-name {
+  color: #bc9cff;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  flex: 1; }
+
+.-only-timepicker- .datepicker__content,
+.datepicker__body,
+.datepicker-inline .datepicker__pointer {
+  display: none; }
+
+.datepicker__cell-day {
+  width: 14.28571%; }
+
+.datepicker__cells-months {
+  height: 170px; }
+
+.datepicker__cell-month {
+  width: 50px;
+  height: 50px; }
+
+.datepicker__cells-years,
+.datepicker__years {
+  height: 170px; }
+
+.datepicker__cell-year {
+  width: 50px;
+  height: 50px; }
+
+.datepickers-container {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+@media print {
+  .datepickers-container {
+    display: none; } }
+
+.datepicker {
+  background: #fff;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: MontserratRegular, sans-serif;
+  font-size: 14px;
+  color: #4a4a4a;
+  width: 320px;
+  padding: 20px;
+  position: absolute;
+  left: -100000px;
+  opacity: 0;
+  transition: opacity .3s ease, left 0s .3s, -webkit-transform .3s ease;
+  transition: opacity .3s ease, transform .3s ease, left 0s .3s;
+  transition: opacity .3s ease, transform .3s ease, left 0s .3s, -webkit-transform .3s ease;
+  z-index: 100; }
+
+.datepicker.-from-top- {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px); }
+
+.datepicker.-from-right- {
+  -webkit-transform: translateX(5px);
+  transform: translateX(5px); }
+
+.datepicker.-from-bottom- {
+  transform: translateY(5px); }
+
+.datepicker.-from-left- {
+  -webkit-transform: translateX(-5px);
+  transform: translateX(-5px); }
+
+.datepicker.active {
+  opacity: 1;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+  transition: opacity .3s ease, left 0s 0s, -webkit-transform .3s ease;
+  transition: opacity .3s ease, transform .3s ease, left 0s 0s;
+  transition: opacity .3s ease, transform .3s ease, left 0s 0s, -webkit-transform .3s ease; }
+
+.datepicker-inline .datepicker {
+  border-color: #d7d7d7;
+  box-shadow: none;
+  position: static;
+  left: auto;
+  right: auto;
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none; }
+
+.datepicker__content {
+  box-sizing: content-box; }
+
+.datepicker__pointer {
+  position: absolute;
+  background: #fff;
+  border-top: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  width: 10px;
+  height: 10px;
+  z-index: -1; }
+
+.datepicker__nav-action:hover,
+.datepicker__nav-title:hover {
+  background: #f0f0f0; }
+
+.-top-center- .datepicker__pointer,
+.-top-left- .datepicker__pointer,
+.-top-right- .datepicker__pointer {
+  top: calc(100% - 4px);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
+.-right-bottom- .datepicker__pointer,
+.-right-center- .datepicker__pointer,
+.-right-top- .datepicker__pointer {
+  right: calc(100% - 4px);
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg); }
+
+.-bottom-center- .datepicker__pointer,
+.-bottom-left- .datepicker__pointer,
+.-bottom-right- .datepicker__pointer {
+  bottom: calc(100% - 4px);
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg); }
+
+.-left-bottom- .datepicker__pointer,
+.-left-center- .datepicker__pointer,
+.-left-top- .datepicker__pointer {
+  left: calc(100% - 4px);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.-bottom-left- .datepicker__pointer,
+.-top-left- .datepicker__pointer {
+  left: 10px; }
+
+.-bottom-right- .datepicker__pointer,
+.-top-right- .datepicker__pointer {
+  right: 10px; }
+
+.-bottom-center- .datepicker__pointer,
+.-top-center- .datepicker__pointer {
+  left: calc(50% - 10px / 2); }
+
+.-left-top- .datepicker__pointer,
+.-right-top- .datepicker__pointer {
+  top: 10px; }
+
+.-left-bottom- .datepicker__pointer,
+.-right-bottom- .datepicker__pointer {
+  bottom: 10px; }
+
+.-left-center- .datepicker__pointer,
+.-right-center- .datepicker__pointer {
+  top: calc(50% - 10px / 2); }
+
+.datepicker__body.active {
+  display: block; }
+
+.datepicker__nav {
+  display: flex;
+  justify-content: space-between;
+  min-height: 32px; }
+
+.-only-timepicker- .datepicker__nav {
+  display: none; }
+
+.datepicker__nav-action,
+.datepicker__nav-title {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer; }
+
+.datepicker__nav-action {
+  width: 20px;
+  border-radius: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.datepicker__nav-action.-disabled- {
+  visibility: hidden; }
+
+.datepicker__nav-action i {
+  width: 20px;
+  height: 20px;
+  color: #bc9cff; }
+
+.datepicker__nav-title {
+  font-family: QuicksandBold;
+  border-radius: 4px; }
+
+.datepicker__time {
+  padding: 4px; }
+
+.datepicker__nav-title i {
+  margin-left: 5px; }
+
+.datepicker__nav-title.-disabled- {
+  cursor: default;
+  background: 0 0; }
+
+.datepicker__buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between; }
+
+.datepicker__button {
+  padding: 0;
+  color: rgba(31, 32, 65, 0.5);
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: MontseratBold;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none; }
+  .datepicker__button[data-action="accept"] {
+    color: #bc9cff; }
+
+.datepicker__button:hover {
+  color: rgba(31, 32, 65, 0.75); }
+  .datepicker__button:hover[data-action="accept"] {
+    color: #bc9cff; }
+
+.datepicker__time {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative; }
+
+.datepicker__time.-am-pm- .datepicker__time-sliders {
+  -webkit-flex: 0 1 135px;
+  -ms-flex: 0 1 135px;
+  flex: 0 1 135px;
+  max-width: 135px; }
+
+.-only-timepicker- .datepicker__time {
+  border-top: none; }
+
+.datepicker__time-sliders {
+  -webkit-flex: 0 1 153px;
+  -ms-flex: 0 1 153px;
+  flex: 0 1 153px;
+  margin-right: 10px;
+  max-width: 153px; }
+
+.datepicker__time-label {
+  display: none;
+  font-size: 12px; }
+
+.datepicker__time-current {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 0 0 10px; }
+
+.datepicker__time-current-colon {
+  margin: 0 2px 3px;
+  line-height: 1; }
+
+.datepicker__time-current-hours,
+.datepicker__time-current-minutes {
+  line-height: 1;
+  font-size: 19px;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  position: relative;
+  z-index: 1; }
+
+.datepicker__time-current-hours:after,
+.datepicker__time-current-minutes:after {
+  content: '';
+  background: #f0f0f0;
+  border-radius: 4px;
+  position: absolute;
+  left: -2px;
+  top: -3px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  opacity: 0; }
+
+.datepicker__time-current-hours.-focus-:after,
+.datepicker__time-current-minutes.-focus-:after {
+  opacity: 1; }
+
+.datepicker__time-current-ampm {
+  text-transform: uppercase;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  color: #9c9c9c;
+  margin-left: 6px;
+  font-size: 11px;
+  margin-bottom: 1px; }
+
+.datepicker__time-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 11px;
+  height: 17px;
+  background: linear-gradient(to right, #dedede, #dedede) left 50%/100% 1px no-repeat; }
+
+.datepicker__time-row:first-child {
+  margin-bottom: 4px; }
+
+.datepicker__time-row input[type=range] {
+  background: 0 0;
+  cursor: pointer;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none; }
+
+.datepicker__time-row input[type=range]::-ms-tooltip {
+  display: none; }
+
+.datepicker__time-row input[type=range]:hover::-webkit-slider-thumb {
+  border-color: #b8b8b8; }
+
+.datepicker__time-row input[type=range]:hover::-moz-range-thumb {
+  border-color: #b8b8b8; }
+
+.datepicker__time-row input[type=range]:hover::-ms-thumb {
+  border-color: #b8b8b8; }
+
+.datepicker__time-row input[type=range]:focus {
+  outline: 0; }
+
+.datepicker__time-row input[type=range]:focus::-webkit-slider-thumb {
+  background: #5cc4ef;
+  border-color: #5cc4ef; }
+
+.datepicker__time-row input[type=range]:focus::-moz-range-thumb {
+  background: #5cc4ef;
+  border-color: #5cc4ef; }
+
+.datepicker__time-row input[type=range]:focus::-ms-thumb {
+  background: #5cc4ef;
+  border-color: #5cc4ef; }
+
+.datepicker__time-row input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  border: 1px solid #dedede;
+  background: #fff;
+  cursor: pointer;
+  transition: background .2s;
+  margin-top: -6px; }
+
+.datepicker__time-row input[type=range]::-moz-range-thumb {
+  box-sizing: border-box;
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  border: 1px solid #dedede;
+  background: #fff;
+  cursor: pointer;
+  transition: background .2s; }
+
+.datepicker__time-row input[type=range]::-ms-thumb {
+  box-sizing: border-box;
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  border: 1px solid #dedede;
+  background: #fff;
+  cursor: pointer;
+  transition: background .2s; }
+
+.datepicker__time-row input[type=range]::-webkit-slider-runnable-track {
+  border: none;
+  height: 1px;
+  cursor: pointer;
+  color: transparent;
+  background: 0 0; }
+
+.datepicker__time-row input[type=range]::-moz-range-track {
+  border: none;
+  height: 1px;
+  cursor: pointer;
+  color: transparent;
+  background: 0 0; }
+
+.datepicker__time-row input[type=range]::-ms-track {
+  border: none;
+  height: 1px;
+  cursor: pointer;
+  color: transparent;
+  background: 0 0; }
+
+.datepicker__time-row input[type=range]::-ms-fill-lower {
+  background: 0 0; }
+
+.datepicker__time-row input[type=range]::-ms-fill-upper {
+  background: 0 0; }
+
+.datepicker__time-row span {
+  padding: 0 12px; }
+
+.datepicker__time-icon {
+  color: #9c9c9c;
+  border: 1px solid;
+  border-radius: 50%;
+  font-size: 16px;
+  position: relative;
+  margin: 0 5px -1px 0;
+  width: 1em;
+  height: 1em; }
+
+.datepicker__time-icon:after,
+.datepicker__time-icon:before {
+  content: '';
+  background: currentColor;
+  position: absolute; }
+
+.datepicker__time-icon:after {
+  height: .4em;
+  width: 1px;
+  left: calc(50% - 1px);
+  top: calc(50% + 1px);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%); }
+
+.datepicker__time-icon:before {
+  width: .4em;
+  height: 1px;
+  top: calc(50% + 1px);
+  left: calc(50% - 1px); }
+
+.datepicker__cell-day.-other-month-,
+.datepicker__cell-year.-other-decade- {
+  color: rgba(31, 32, 65, 0.25); }
+  .datepicker__cell-day.-other-month-.-selected-,
+  .datepicker__cell-year.-other-decade-.-selected- {
+    color: #fff; }
+  .datepicker__cell-day.-other-month-.-current-,
+  .datepicker__cell-year.-other-decade-.-current- {
+    color: #fff; }
+  .datepicker__cell-day.-other-month-.-in-range-.-current-,
+  .datepicker__cell-year.-other-decade-.-in-range-.-current- {
+    color: #6fcf97; }
+
+.-disabled-.-focus-.datepicker__cell-day.-other-month-,
+.-disabled-.-focus-.datepicker__cell-year.-other-decade- {
+  color: rgba(31, 32, 65, 0.25); }
+
+.-selected-.-focus-.datepicker__cell-day.-other-month-,
+.-selected-.-focus-.datepicker__cell-year.-other-decade- {
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.2); }
+
+.datepicker__cell-day.-other-month-:empty,
+.datepicker__cell-year.-other-decade-:empty {
+  background: 0 0;
+  border: none; }
+
+.dropdowns-container {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.dropdown {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 7px 7px 13px 15px;
+  background: #fff;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  left: -100000px;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity .3s ease, transform .3s ease, left 0s .3s;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
+  .dropdown.active {
+    opacity: 1;
+    transition: opacity .3s ease, transform .3s ease, left 0s 0s; }
+  .dropdown__fields {
+    display: flex;
+    flex-direction: column; }
+  .dropdown__field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+    .dropdown__field:not(:first-child) {
+      margin-top: 7px; }
+  .dropdown__counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 92px; }
+    .dropdown__counter-inc, .dropdown__counter-dec {
+      cursor: pointer;
+      outline: none;
+      width: 30px;
+      height: 30px;
+      background: transparent;
+      color: rgba(31, 32, 65, 0.5);
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 50px;
+      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0;
+      justify-content: center; }
+      .dropdown__counter-inc.disabled, .dropdown__counter-dec.disabled {
+        color: rgba(31, 32, 65, 0.05);
+        border: 1px solid rgba(31, 32, 65, 0.05); }
+    .dropdown__counter-value {
+      font-family: MontseratBold; }
+    .dropdown__counter-label {
+      text-transform: uppercase;
+      font-family: MontseratBold;
+      font-size: 12px; }
+  .dropdown__buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between; }
+  .dropdown__button {
+    padding: 0;
+    color: rgba(31, 32, 65, 0.5);
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-family: MontseratBold;
+    font-size: 12px;
+    cursor: pointer;
+    outline: none; }
+    .dropdown__button[data-action="accept"] {
+      color: #bc9cff; }
+
+@font-face {
+  font-family: QuicksandBold;
+  src: url("../src/fonts/quicksandbold.ttf"); }
+
+@font-face {
+  font-family: QuicksandRegular;
+  src: url("../src/fonts/quicksandregular.ttf"); }
+
+@font-face {
+  font-family: MontseratBold;
+  src: url("../src/fonts/Montserrat-Bold.ttf"); }
+
+@font-face {
+  font-family: MontseratRegular;
+  src: url("../src/fonts/Montserrat-Regular.ttf"); }
+
 .button {
   outline: none;
   border: none;
@@ -16,6 +728,9 @@
     color: #FFF; }
   .button_long {
     width: 320px; }
+    @media screen and (max-width: 480px) {
+      .button_long {
+        width: 84vw; } }
   .button__arrow {
     width: 44px;
     height: 44px;
@@ -40,7 +755,7 @@
     line-height: 15px;
     text-transform: uppercase; }
   .button_login-button {
-    width: 79px;
+    width: 87px;
     height: 34px; }
   .button_register-button {
     width: 196px;
@@ -49,7 +764,7 @@
 .input {
   position: relative;
   outline: none;
-  width: 320px;
+  width: 260px;
   height: 44px;
   background: #ffffff;
   box-sizing: border-box;
@@ -80,11 +795,14 @@
       background: -webkit-linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; }
+  .input__register {
+    width: 320px;
+    height: 44px; }
   .input:hover, .input:focus {
     border: 1px solid rgba(31, 32, 65, 0.5);
     color: rgba(31, 32, 65, 0.75); }
 
-.dropdown {
+.dropdown-container {
   width: 320px;
   height: 44px;
   background: #FFFFFF;
@@ -97,9 +815,12 @@
   line-height: 24px;
   padding-left: 15px;
   outline: none; }
-  .dropdown__wrapper {
+  @media screen and (max-width: 480px) {
+    .dropdown-container {
+      width: 84vw; } }
+  .dropdown-container__wrapper {
     position: relative; }
-  .dropdown__arrow {
+  .dropdown-container__arrow {
     width: 44px;
     height: 44px;
     position: absolute;
@@ -109,7 +830,7 @@
     display: flex;
     justify-content: center;
     align-items: center; }
-  .dropdown__text {
+  .dropdown-container__text {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: normal;
@@ -120,8 +841,11 @@
     align-items: center;
     /* Dark 75% */
     color: rgba(31, 32, 65, 0.75); }
-  .dropdown_date-dropdown {
+  .dropdown-container_date-dropdown {
     width: 150px; }
+    @media screen and (max-width: 480px) {
+      .dropdown-container_date-dropdown {
+        width: 39vw; } }
 
 .checkbox {
   -webkit-appearance: none;
@@ -179,9 +903,7 @@
     height: 12px;
     background: rgba(31, 32, 65, 0.25);
     position: absolute;
-    top: 4;
-    bottom: 4;
-    right: 24px;
+    margin: 4px;
     border-radius: 10px; }
   .toggle__checkbox:checked + .toggle__label {
     background-color: #FFF; }
@@ -190,7 +912,8 @@
   .toggle__checkbox:checked + .toggle__label {
     margin-left: 0; }
   .toggle__checkbox:checked + .toggle__label:before {
-    right: 4px;
+    margin-left: 22px;
+    margin-top: 4px;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%); }
 
 .footer {
@@ -236,42 +959,82 @@
       -webkit-text-fill-color: transparent; }
 
 .footer-main {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 1440px;
-  height: 372px;
-  background: #ffffff;
-  box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1); }
-  .footer-main__bottom-block {
-    height: 70px;
-    width: 1440px;
+  display: flex;
+  flex-direction: column;
+  position: relative; }
+  .footer-main__top-block {
+    display: flex;
+    width: 100vw;
+    height: 372px;
     background: #ffffff;
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1); }
+    @media screen and (max-width: 480px) {
+      .footer-main__top-block {
+        height: 250px; } }
+  .footer-main__bottom-block {
+    margin-top: 1px;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 70px;
+    background: #FFFFFF;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
+  .footer-main__copyright {
+    position: absolute;
+    margin-top: 26px;
+    margin-left: 9.71vw;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.972vw;
+    line-height: 17px;
+    /* Dark 75% */
+    color: rgba(31, 32, 65, 0.75); }
+  .footer-main__social-media {
+    font-size: 24px;
+    line-height: 23px;
+    margin-left: 82.5vw;
+    margin-top: 23px; }
+    @media screen and (max-width: 768px) {
+      .footer-main__social-media {
+        font-size: 18px; } }
+    @media screen and (max-width: 480px) {
+      .footer-main__social-media {
+        margin-left: 70vw; } }
   .footer-main__company-info {
     display: inline-block;
-    margin-left: 140px;
+    margin-left: 9.722vw;
     margin-top: 100px; }
+    @media screen and (max-width: 1400px) {
+      .footer-main__company-info {
+        display: flex;
+        flex-direction: column;
+        margin-left: 31.944vw; } }
+    @media screen and (max-width: 480px) {
+      .footer-main__company-info {
+        margin-top: 20px; } }
   .footer-main__links {
     width: 808px;
     height: 168px;
     position: absolute;
     top: 104px;
-    left: 440px; }
+    left: 30.556vw;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap; }
+    @media screen and (max-width: 1400px) {
+      .footer-main__links {
+        display: none; } }
   .footer-main__navigation {
-    float: left;
-    width: 81px;
-    height: 168px; }
+    width: 150px;
+    height: 143px; }
   .footer-main__about-us {
-    display: inline-block;
-    margin-left: 119px;
-    width: 84px;
+    margin-left: 57px;
+    width: 108px;
     height: 168px; }
   .footer-main__support {
-    position: absolute;
-    margin-left: 118px;
-    display: inline-block;
-    width: 113px;
+    margin-left: 92px;
+    width: 149px;
     height: 130px; }
   .footer-main__list-header {
     font-family: "Montserrat";
@@ -281,7 +1044,9 @@
     line-height: 15px;
     text-transform: uppercase;
     color: #1f2041;
-    margin-bottom: 21px; }
+    margin-bottom: 21px;
+    margin-top: 0;
+    margin-left: 2px; }
   .footer-main__list-regular {
     font-family: "Montserrat";
     font-style: normal;
@@ -292,10 +1057,9 @@
     .footer-main__list-regular_margined {
       margin-top: 20px; }
   .footer-main__input {
-    margin-top: 89px;
+    margin-top: 67px;
+    margin-left: 2px;
     position: absolute; }
-  .footer-main__button {
-    flex-grow: 2; }
   .footer-main__regular-text {
     position: absolute;
     margin-top: -4px;
@@ -307,14 +1071,18 @@
     /* or 171% */
     /* Dark 75% */
     color: rgba(31, 32, 65, 0.75); }
+    .footer-main__regular-text_subscribe {
+      width: 260px;
+      margin-left: 2px; }
   .footer-main__list {
     list-style-type: none;
     margin: 0;
     padding: 0; }
   .footer-main__subscribe {
-    width: 220px;
-    height: 84px;
-    float: right; }
+    width: 260px;
+    height: 148px;
+    margin-left: 51px;
+    white-space: pre-wrap; }
   .footer-main__logo {
     height: 40px;
     width: 105.69px;
@@ -327,23 +1095,45 @@
     line-height: 24px;
     width: 260px;
     height: 96px;
-    margin-top: 20px; }
+    margin-top: 16px; }
+    @media screen and (max-width: 480px) {
+      .footer-main__logo-description {
+        width: 100%; } }
 
 .header {
-  display: block;
+  display: flex;
   overflow: hidden;
-  width: 1440px;
+  width: 100%;
   height: 70px;
   background: #ffffff;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
+  .header__flex-container {
+    display: flex;
+    flex-direction: row;
+    height: 35px;
+    align-items: baseline; }
   .header__logo {
+    display: flex;
     position: absolute;
     margin-top: 15px;
-    margin-left: 140px;
+    margin-left: 9.722vw;
     height: 40px;
     width: 105.69px;
     background-image: url('data:image/svg+xml,%3Csvg width="106" height="40" viewBox="0 0 106 40" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M62.335 13.368C62.5567 13.368 62.7375 13.4438 62.8775 13.5955C63.0292 13.7355 63.105 13.9163 63.105 14.138C63.105 14.348 63.0292 14.5288 62.8775 14.6805C62.7375 14.8322 62.5567 14.908 62.335 14.908H58.5725V25.408C58.5725 25.6297 58.4967 25.8163 58.345 25.968C58.205 26.108 58.0242 26.178 57.8025 26.178C57.5925 26.178 57.4117 26.108 57.26 25.968C57.1083 25.8163 57.0325 25.6297 57.0325 25.408V14.908H53.27C53.06 14.908 52.8792 14.8322 52.7275 14.6805C52.5758 14.5288 52.5 14.348 52.5 14.138C52.5 13.9163 52.5758 13.7355 52.7275 13.5955C52.8792 13.4438 53.06 13.368 53.27 13.368H62.335Z" fill="%231F2041"/%3E%3Cpath d="M68.9076 13.368C69.7943 13.368 70.6285 13.5372 71.4101 13.8755C72.2035 14.2138 72.8918 14.6747 73.4751 15.258C74.0701 15.8413 74.5368 16.5297 74.8751 17.323C75.2134 18.1047 75.3826 18.9388 75.3826 19.8255C75.3826 20.8638 75.1609 21.8205 74.7176 22.6955C74.2743 23.5705 73.6735 24.3055 72.9151 24.9005C72.9151 24.9005 72.9035 24.9122 72.8801 24.9355C72.3201 25.3555 71.7076 25.688 71.0426 25.933C70.3776 26.1663 69.666 26.283 68.9076 26.283C68.0209 26.283 67.1868 26.1138 66.4051 25.7755C65.6234 25.4372 64.9351 24.9763 64.3401 24.393C63.7568 23.8097 63.296 23.1272 62.9576 22.3455C62.6193 21.5638 62.4501 20.7238 62.4501 19.8255C62.4501 18.8455 62.6484 17.9413 63.0451 17.113C63.4418 16.273 63.9843 15.5555 64.6726 14.9605L64.7426 14.8905C64.7543 14.8905 64.7718 14.8788 64.7951 14.8555C65.3551 14.3888 65.9851 14.0272 66.6851 13.7705C67.3851 13.5022 68.1259 13.368 68.9076 13.368ZM68.9076 24.743C69.351 24.743 69.771 24.6905 70.1676 24.5855C70.576 24.4688 70.961 24.3113 71.3226 24.113L65.1801 16.6405C64.8068 17.0722 64.5151 17.5622 64.3051 18.1105C64.0951 18.6472 63.9901 19.2188 63.9901 19.8255C63.9901 20.5022 64.1185 21.138 64.3751 21.733C64.6318 22.328 64.9818 22.853 65.4251 23.308C65.8801 23.7513 66.4051 24.1013 67.0001 24.358C67.5951 24.6147 68.231 24.743 68.9076 24.743ZM72.5301 23.1505C72.9384 22.7072 73.2535 22.2055 73.4751 21.6455C73.7085 21.0738 73.8251 20.4672 73.8251 19.8255C73.8251 19.1488 73.6968 18.513 73.4401 17.918C73.1834 17.323 72.8276 16.8038 72.3726 16.3605C71.9293 15.9055 71.4101 15.5497 70.8151 15.293C70.2201 15.0363 69.5843 14.908 68.9076 14.908C68.4409 14.908 67.9918 14.9722 67.5601 15.1005C67.1284 15.2172 66.7259 15.3922 66.3526 15.6255L72.5301 23.1505Z" fill="%231F2041"/%3E%3Cpath d="M82.351 20.6305C82.1177 20.6305 81.9194 20.5372 81.756 20.3505L77.2585 14.5755C77.1302 14.4122 77.0777 14.2313 77.101 14.033C77.1244 13.823 77.2177 13.6538 77.381 13.5255C77.5444 13.3972 77.7252 13.3505 77.9235 13.3855C78.1335 13.4088 78.3027 13.5022 78.431 13.6655L82.351 18.6705L86.1835 13.753C86.3119 13.5897 86.4752 13.4963 86.6735 13.473C86.8835 13.4497 87.0702 13.5022 87.2335 13.6305C87.3969 13.7588 87.4902 13.928 87.5135 14.138C87.5369 14.3363 87.4844 14.5172 87.356 14.6805L82.946 20.3505C82.7944 20.5372 82.596 20.6305 82.351 20.6305ZM87.2685 26.2655C87.2219 26.2655 87.146 26.2597 87.041 26.248C86.9477 26.2363 86.8369 26.2072 86.7085 26.1605C86.5802 26.1022 86.4402 26.0263 86.2885 25.933C86.1485 25.828 86.0085 25.688 85.8685 25.513L82.351 20.9805L78.5185 25.9155C78.3902 26.0788 78.221 26.1722 78.011 26.1955C77.8127 26.2188 77.6319 26.1663 77.4685 26.038C77.3052 25.9097 77.2119 25.7463 77.1885 25.548C77.1652 25.338 77.2177 25.1513 77.346 24.988L81.756 19.318C81.896 19.1313 82.0885 19.038 82.3335 19.038C82.5902 19.038 82.7944 19.1313 82.946 19.318L87.041 24.568C87.0994 24.6497 87.1519 24.7022 87.1985 24.7255C87.2452 24.7488 87.2802 24.7663 87.3035 24.778C87.5019 24.778 87.6652 24.848 87.7935 24.988C87.9335 25.1163 88.0094 25.2797 88.021 25.478C88.0444 25.688 87.986 25.8688 87.846 26.0205C87.706 26.1722 87.531 26.2538 87.321 26.2655H87.2685Z" fill="%231F2041"/%3E%3Cpath d="M91.7343 26.2655C91.5126 26.2655 91.326 26.1897 91.1743 26.038C91.0226 25.8863 90.9468 25.6997 90.9468 25.478V14.103C90.9468 13.893 91.0226 13.7122 91.1743 13.5605C91.326 13.4088 91.5126 13.333 91.7343 13.333C91.9443 13.333 92.1251 13.4088 92.2768 13.5605C92.4285 13.7122 92.5043 13.893 92.5043 14.103V25.478C92.5043 25.6997 92.4285 25.8863 92.2768 26.038C92.1251 26.1897 91.9443 26.2655 91.7343 26.2655Z" fill="%231F2041"/%3E%3Cpath d="M104.938 26.2305C104.681 26.2305 104.483 26.1313 104.343 25.933L97.0452 16.343V25.478C97.0452 25.688 96.9693 25.8688 96.8177 26.0205C96.6777 26.1605 96.5027 26.2305 96.2927 26.2305C96.0943 26.2305 95.9193 26.1605 95.7677 26.0205C95.616 25.8688 95.5402 25.688 95.5402 25.478V14.1205C95.5402 13.9572 95.5868 13.8113 95.6802 13.683C95.7735 13.5547 95.9018 13.4672 96.0652 13.4205C96.2168 13.3622 96.3685 13.3563 96.5202 13.403C96.6718 13.4497 96.8002 13.5372 96.9052 13.6655L104.185 23.273V14.1205C104.185 13.9222 104.255 13.7472 104.395 13.5955C104.547 13.4438 104.728 13.368 104.938 13.368C105.148 13.368 105.323 13.4438 105.463 13.5955C105.614 13.7472 105.69 13.9222 105.69 14.1205V25.478C105.69 25.6413 105.643 25.7872 105.55 25.9155C105.457 26.0438 105.334 26.1372 105.183 26.1955C105.066 26.2188 104.984 26.2305 104.938 26.2305Z" fill="%231F2041"/%3E%3Cpath d="M20.0003 27.0587C19.3533 27.0587 18.8239 26.5292 18.8239 25.8822C18.8239 21.3528 15.118 17.6469 10.5886 17.6469C9.94152 17.6469 9.41211 17.1175 9.41211 16.4704C9.41211 15.8234 9.94152 15.2939 10.5886 15.2939C16.4415 15.2939 21.1768 20.0292 21.1768 25.8822C21.1768 26.5292 20.6474 27.0587 20.0003 27.0587Z" fill="url(%23paint0_linear)"/%3E%3Cpath d="M30.5884 16.4704C30.5884 17.1175 30.0589 17.6469 29.4119 17.6469C26.6178 17.6469 24.1178 19.0587 22.6472 21.2057C22.3236 20.3822 21.9413 19.6175 21.4707 18.9116C23.4119 16.6763 26.2648 15.2939 29.4119 15.2939C30.0589 15.2939 30.5884 15.8234 30.5884 16.4704Z" fill="url(%23paint1_linear)"/%3E%3Cpath d="M20 40C8.97059 40 0 31.0294 0 20C0 8.97059 8.97059 0 20 0C31.0294 0 40 8.97059 40 20C40 31.0294 31.0294 40 20 40ZM20 2.35294C10.2647 2.35294 2.35294 10.2647 2.35294 20C2.35294 29.7353 10.2647 37.6471 20 37.6471C29.7353 37.6471 37.6471 29.7353 37.6471 20C37.6471 10.2647 29.7353 2.35294 20 2.35294Z" fill="url(%23paint2_linear)"/%3E%3Cdefs%3E%3ClinearGradient id="paint0_linear" x1="15.2945" y1="15.2939" x2="15.2945" y2="27.0587" gradientUnits="userSpaceOnUse"%3E%3Cstop stop-color="%23BC9CFF"/%3E%3Cstop offset="1" stop-color="%238BA4F9"/%3E%3C/linearGradient%3E%3ClinearGradient id="paint1_linear" x1="26.0295" y1="15.2939" x2="26.0295" y2="21.2057" gradientUnits="userSpaceOnUse"%3E%3Cstop stop-color="%236FCF97"/%3E%3Cstop offset="1" stop-color="%2366D2EA"/%3E%3C/linearGradient%3E%3ClinearGradient id="paint2_linear" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse"%3E%3Cstop stop-color="%23BC9CFF"/%3E%3Cstop offset="1" stop-color="%238BA4F9"/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A');
     background-repeat: no-repeat; }
+    @media screen and (max-width: 480px) {
+      .header__logo {
+        margin-left: 33vw; } }
+  .header__dropdown {
+    display: flex;
+    position: absolute;
+    margin-top: 23px;
+    padding-left: 1.6vw;
+    overflow: none;
+    color: rgba(31, 32, 65, 0.5); }
+    @media screen and (min-width: 1400px) {
+      .header__dropdown {
+        display: none; } }
   .header__text {
     font-family: "Montserrat";
     font-weight: normal;
@@ -355,21 +1145,46 @@
       color: rgba(31, 32, 65, 0.75);
       font-weight: bold; }
     .header__text_regular-spaced {
-      margin-left: 30px; }
+      margin-left: 21px; }
+  .header__dropdown-container {
+    display: flex; }
+  .header__arrow-icon {
+    display: flex;
+    margin-left: 1px;
+    padding-bottom: 1px; }
+  .header__arrow-container {
+    display: flex;
+    width: 24px;
+    height: 21px;
+    line-height: 20px;
+    justify-content: center;
+    align-items: center; }
   .header__links {
+    display: flex;
     position: absolute;
-    margin-top: 11px;
-    margin-left: 390px;
-    width: 527px;
+    margin-top: 27px;
+    margin-left: 36.875vw;
+    width: 550px;
     height: 21px; }
+    @media screen and (max-width: 1400px) {
+      .header__links {
+        display: none; } }
   .header__buttons {
-    position: absolute;
+    display: flex;
     width: 310px;
-    margin-top: 3px;
-    margin-left: 960px; }
+    margin-top: 18px;
+    padding-left: 69.167vw; }
+    @media screen and (max-width: 1400px) {
+      .header__buttons {
+        padding-left: 36.875vw; } }
+    @media screen and (max-width: 480px) {
+      .header__buttons {
+        display: none; } }
   .header__register-button {
-    margin-left: 30px; }
+    display: flex;
+    margin-left: 20px; }
   .header__icon {
+    display: flex;
     font-size: 24px;
     line-height: 20px;
     /* identical to box height */
@@ -377,35 +1192,6 @@
     text-align: center; }
     .header__icon_grey {
       color: rgba(31, 32, 65, 0.5); }
-
-.landing {
-  background-image: url("/images/landing-background.png");
-  background-repeat: no-repeat;
-  width: 1534px;
-  height: 1022px;
-  left: -47px;
-  top: -61px; }
-  .landing__find-card {
-    position: absolute;
-    width: 380px;
-    height: 374px;
-    left: 140px;
-    top: 140px; }
-  .landing__words {
-    position: absolute;
-    width: 297px;
-    height: 48px;
-    left: 1009px;
-    top: 834px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    /* or 171% */
-    text-align: right;
-    /* Dark 75% */
-    color: rgba(31, 32, 65, 0.75); }
 
 .find-card {
   position: absolute;
@@ -416,12 +1202,15 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px; }
+  @media screen and (max-width: 480px) {
+    .find-card {
+      width: 100vw; } }
   .find-card__header {
     position: relative;
     margin-top: 40px;
-    margin-left: 30px;
-    width: 320px;
-    height: 60px;
+    margin-left: 7.8%;
+    width: 84%;
+    height: 6.666666666666667vh;
     font-family: "Montserrat";
     font-weight: 700;
     font-size: 24px;
@@ -444,18 +1233,214 @@
     .find-card__dropdown_right {
       margin-left: 20px; }
     .find-card__dropdown_lowest {
-      margin-left: 30px; }
+      margin-left: 30px;
+      margin-top: -5px; }
   .find-card__button {
     width: 320px;
     height: 44px;
     margin-left: 30px;
     margin-top: 31px; }
+  .find-card__label {
+    margin-top: 25px;
+    margin-bottom: 5px; }
+
+.landing {
+  background-image: url("/images/landing-background.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1440px;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  max-height: 117.05237515225335vh;
+  height: 100%;
+  left: -47px;
+  top: 61px; }
+  .landing__find-card {
+    position: absolute;
+    display: flex;
+    width: 380px;
+    height: 374px;
+    left: 9.722vw;
+    top: 140px; }
+    @media screen and (max-width: 768px) {
+      .landing__find-card {
+        left: 13.472vw; } }
+    @media screen and (max-width: 480px) {
+      .landing__find-card {
+        left: 0;
+        top: 70px; } }
+  .landing__words {
+    position: absolute;
+    width: 297px;
+    height: 48px;
+    left: 1009px;
+    top: 834px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    /* or 171% */
+    text-align: right;
+    /* Dark 75% */
+    color: rgba(31, 32, 65, 0.75); }
+
+.authorisation {
+  display: flex;
+  flex-direction: column;
+  background-image: url("/images/authorisation-background.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 1142px;
+  left: -44px;
+  top: -166px; }
+  .authorisation__register {
+    position: absolute;
+    display: flex;
+    width: 380px;
+    height: 646px;
+    margin-left: 36.806vw;
+    margin-top: 30px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px; }
+  .authorisation__label {
+    white-space: nowrap;
+    display: flex;
+    width: 320px;
+    height: 30px;
+    margin-top: 40px;
+    margin-left: 30px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #1f2041; }
+  .authorisation__name-input {
+    position: absolute;
+    display: flex;
+    margin-top: 90px;
+    margin-left: 30px; }
+  .authorisation__secname-input {
+    position: absolute;
+    display: flex;
+    margin-top: 144px;
+    margin-left: 30px; }
+  .authorisation__gender-selection {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 220.74px;
+    height: 24.44px;
+    margin-left: 30px;
+    margin-top: 198px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75); }
+    .authorisation__gender-selection_padded {
+      margin-right: 20px; }
+  .authorisation__birthday {
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 242px; }
+  .authorisation__info {
+    position: absolute;
+    margin-top: 326px;
+    margin-left: 30px; }
+    .authorisation__info_padded {
+      margin-top: 10px; }
+  .authorisation__offers {
+    position: absolute;
+    display: flex;
+    margin-top: 456px;
+    margin-left: 30px; }
+    .authorisation__offers_padded {
+      margin-left: 10px; }
+  .authorisation__proceed {
+    position: absolute;
+    margin-top: 498px;
+    margin-left: 30px; }
+  .authorisation__login-button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin-top: 572px;
+    margin-left: 30px;
+    width: 320px;
+    height: 44px; }
+    .authorisation__login-button_padded {
+      margin-left: 35px; }
 
 body {
-  margin: 0 0 250px;
-  padding: 0; }
+  padding: 0;
+  margin: 0; }
 
-html {
-  position: relative;
-  min-height: 100%; }
+html, body {
+  height: 100%; }
+
+body {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75); }
+
+p {
+  margin: 0; }
+
+h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+  text-transform: uppercase;
+  color: #1F2041;
+  margin: 0;
+  margin-bottom: 5px; }
+
+h2 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: #1f2041; }
+
+h1 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  /* Dark 100% */
+  color: #1F2041; }
+
+a:link {
+  color: rgba(31, 32, 65, 0.5);
+  text-decoration: none; }
+
+a:visited {
+  color: rgba(31, 32, 65, 0.5);
+  text-decoration: none; }
+
+a:hover {
+  color: rgba(31, 32, 65, 0.5);
+  text-decoration: none; }
+
+a:active {
+  color: rgba(31, 32, 65, 0.5);
+  text-decoration: none; }
 

@@ -25,6 +25,14 @@ const config = {
       filename: 'landing.html',
       template: './src/html/views/landing/landing.pug'
     }),
+    new HtmlWebpackPlugin({
+      filename: 'login.html',
+      template: './src/html/views/authorisation/login.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'register.html',
+      template: './src/html/views/authorisation/register.pug'
+    }),
     new MiniCssExtractPlugin({
       filename: "style.css",
       chunkFilename: "[name].css"

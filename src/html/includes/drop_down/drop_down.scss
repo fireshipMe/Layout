@@ -11,6 +11,9 @@
     line-height: 24px;
     padding-left: 15px;
     outline: none;
+    @media screen and (max-width: 480px) {
+        width: 84vw;
+    }
     &__wrapper {
         position: relative;
     }
@@ -44,5 +47,8 @@
     }
     &_date-dropdown {
         width: 150px;
+        @media screen and (max-width: 480px) {
+            width: 39vw;
+        }
     }
 }

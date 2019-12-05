@@ -1,3 +1,4 @@
+
 .input {
   position: relative;
   outline: none;
@@ -39,6 +40,14 @@
       background: -webkit-linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__register {
+    width: 320px;
+    height: 44px;
+    @media screen and (max-width: 480px) {
+      width: 320/380 * 100%;
     }
   }
 

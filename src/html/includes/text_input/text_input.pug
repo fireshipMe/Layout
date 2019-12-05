@@ -1,4 +1,4 @@
-mixin input(type, subscriptional)
+mixin input(type, subscriptional, placeholder)
     if subscriptional
         div(class="input__subscription")
             input(placeholder="Email", type="text" class= type)
@@ -6,4 +6,4 @@ mixin input(type, subscriptional)
                 <i class="tiny material-icons input__button_gradient-text">arrow_forward</i>
             
     else
-        input(placeholder="Email", type="text" class= type)
+        input(placeholder= placeholder, type="text" class= type)

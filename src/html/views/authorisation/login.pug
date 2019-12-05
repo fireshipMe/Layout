@@ -1,0 +1,21 @@
+extends authorisation_template.pug
+
+include ../../includes/text_input/text_input.pug
+include ../../includes/radiobutton/radiobutton.pug
+include ../../includes/switch/switch.pug
+
+block login
+    .authorisation
+        .authorisation__login
+            .authorisation__login-label
+                h1 Войти
+            .authorisation__login-info
+                +input("input input_default input__register", false, "Email")
+                .authorisation__login-info_padded
+                    +input("input input_default input__register", false, "Пароль")
+            .authorisation__login-proceed
+                +button("button button_filled button_long", "войти", true)
+            .authorisation__register-button
+                p Нет аккаунта на Toxin?
+                .authorisation__register-button_padded
+                    +button("button button_gradiented button_login-button button_create-account", "СОЗДАТЬ")

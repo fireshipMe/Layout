@@ -14,3 +14,15 @@
     font-family: MontseratRegular;
     src: url('../src/fonts/Montserrat-Regular.ttf');
 }
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../src/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular'),
+      url(../src/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+      url(../src/fonts/MaterialIcons-Regular.woff) format('woff'),
+      url(../src/fonts/MaterialIcons-Regular.ttf) format('truetype');
+  }

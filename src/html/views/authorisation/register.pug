@@ -1,0 +1,37 @@
+extends authorisation_template.pug
+
+include ../../includes/text_input/text_input.pug
+include ../../includes/radiobutton/radiobutton.pug
+include ../../includes/switch/switch.pug
+
+block login
+    div(class="authorisation")
+        div(class="authorisation__register")
+            p(class="authorisation__label") Регистрация аккаунта
+            div(class="authorisation__name-input")
+                +input("input input_default input__register", false, "Имя")
+            div(class="authorisation__secname-input")
+                +input("input input_default input__register", false, "Фамилия")
+            .authorisation__gender-selection
+                +radio_button("radio ", "gender", "male")
+                label(for="male", class="authorisation__gender-selection_padded") Мужчина 
+                +radio_button("radio ", "gender", "female")
+                label(for="female") Женщина
+            div(class="authorisation__birthday")
+                h3 дата рождения
+                +input("input input_default input__register", false, "ДД.ММ.ГГГГ")
+            .authorisation__info
+                h3 данные для входа в сервис
+                +input("input input_default input__register", false, "Email")
+                .authorisation__info_padded
+                    +input("input input_default input__register", false, "Пароль")
+            .authorisation__offers
+                +switch()
+                span
+                    p(class="authorisation__offers_padded") Получать спецпредложения
+            .authorisation__proceed
+                +button("button button_filled button_long", "перейти к оплате", true)
+            .authorisation__login-button
+                p Уже есть аккаунт на Toxin
+                .authorisation__login-button_padded
+                    +button("button button_gradiented button_login-button button_create-account" , "ВОЙТИ")

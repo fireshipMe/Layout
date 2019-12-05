@@ -3,15 +3,15 @@ include ../button/button.pug
 
 div(class="find-card")
     div(class="find-card__header")
-        p Найдем номера под ваши желания
+        p(class="find-card__label") Найдем номера под ваши желания
     div(class="find-card__dropdown find-card__dropdown_left")
-        p прибытие
+        p(class="find-card__label") прибытие
         +dropdown("dropdown-container dropdown-container_date-dropdown ", "arrival-date", "ДД.ММ.ГГГГ")
     div(class="find-card__dropdown find-card__dropdown_right")
-        p выезд
+        p(class="find-card__label") выезд
         +dropdown("dropdown-container dropdown-container_date-dropdown", "departure-date", "ДД.ММ.ГГГГ")
     div(class="find-card__dropdown find-card__dropdown_lowest")
-        p гости
+        p(class="find-card__label") гости
         +dropdown("dropdown-container","guest-counter", "Сколько гостей")
     div(class="find-card__button")
         +button("button button_filled button_long", "ПОДОБРАТЬ НОМЕР", true)

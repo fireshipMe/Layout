@@ -18,7 +18,8 @@ header(class="header")
                 a(class="header__text header__text_regular-spaced") Соглашения
                 div(class="header__arrow-container")
                     i(class="material-icons header__text header__arrow-icon") keyboard_arrow_down 
-        div(class="header__buttons") 
-            +button("button button_gradiented button_login-button", "ВОЙТИ")
-            div(class="header__register-button")
+        .header__buttons
+            .header__login-button
+                +button("button button_gradiented button_login-button", "ВОЙТИ")
+            .header__register-button
                 +button("button button_filled button_register-button", "ЗАРЕГИСТРИРОВАТЬСЯ")

@@ -8,6 +8,9 @@
     height: 372px;
     background: #ffffff;
     box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+    @media screen and (max-width: 480px) {
+      height: 250px;
+    }
   }
 
   &__bottom-block {
@@ -28,7 +31,7 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 0.972vw;
     line-height: 17px;
 
     /* Dark 75% */
@@ -41,12 +44,28 @@
     line-height: 23px;
     margin-left: 82.5vw;
     margin-top: 23px;
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: 480px) {
+      margin-left: 70vw;
+    }
   }
 
   &__company-info {
     display: inline-block;
-    margin-left: 140px;
+    margin-left: 9.722vw;
     margin-top: 100px;
+    @media screen and (max-width: 1400px) {
+      display: flex;
+      flex-direction: column;
+      margin-left: 50vw - 18.056vw;
+    }
+
+    @media screen and (max-width: 480px) {
+      margin-top: 20px;
+    }
   }
 
   &__links {
@@ -54,30 +73,28 @@
     height: 168px;
     position: absolute;
     top: 104px;
-    left: 440px;
+    left: 30.556vw;
     display: flex;
     flex-direction: row;
     white-space: nowrap;
+    @media screen and (max-width: 1400px) {
+      display: none;
+    }
   }
 
   &__navigation {
-
-    // float: left;
     width: 150px;
     height: 143px;
   }
 
   &__about-us {
-    //display: inline-block;
     margin-left: 57px;
     width: 108px;
     height: 168px;
   }
 
   &__support {
-    // position: absolute;
     margin-left: 92px;
-    // display: inline-block;
     width: 149px;
     height: 130px;
   }
@@ -168,6 +185,10 @@
     height: 96px;
 
     margin-top: 16px;
+
+    @media screen and (max-width: 480px) {
+      width: 100%;
+    }
   }
 
 }
