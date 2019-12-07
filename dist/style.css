@@ -712,6 +712,14 @@
   font-family: MontseratRegular;
   src: url("../src/fonts/Montserrat-Regular.ttf"); }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../src/fonts/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../src/fonts/MaterialIcons-Regular.woff2) format("woff2"), url(../src/fonts/MaterialIcons-Regular.woff) format("woff"), url(../src/fonts/MaterialIcons-Regular.ttf) format("truetype"); }
+
 .button {
   outline: none;
   border: none;
@@ -760,6 +768,9 @@
   .button_register-button {
     width: 196px;
     height: 34px; }
+  .button_create-account {
+    width: 99px;
+    height: 44px; }
 
 .input {
   position: relative;
@@ -798,6 +809,9 @@
   .input__register {
     width: 320px;
     height: 44px; }
+    @media screen and (max-width: 480px) {
+      .input__register {
+        width: 84.21053%; } }
   .input:hover, .input:focus {
     border: 1px solid rgba(31, 32, 65, 0.5);
     color: rgba(31, 32, 65, 0.75); }
@@ -1253,7 +1267,7 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
-  max-height: 117.05237515225335vh;
+  min-height: 101.09622411693057vh;
   height: 100%;
   left: -47px;
   top: 61px; }
@@ -1293,27 +1307,40 @@
   background-image: url("/images/authorisation-background.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center;
+  background-size: 1440px;
   width: 100vw;
-  height: 1142px;
+  max-height: 85.5vh;
+  height: 100%;
   left: -44px;
-  top: -166px; }
+  top: -166px;
+  align-items: center; }
+  @media screen and (max-height: 768px) {
+    .authorisation {
+      padding-bottom: 150px; } }
+  @media screen and (max-height: 640px) {
+    .authorisation {
+      padding-bottom: 300px; } }
   .authorisation__register {
     position: absolute;
     display: flex;
     width: 380px;
     height: 646px;
-    margin-left: 36.806vw;
     margin-top: 30px;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px; }
+    @media screen and (max-width: 480px) {
+      .authorisation__register {
+        margin-top: 0; } }
+    @media screen and (max-width: 480px) {
+      .authorisation__register {
+        width: 100%; } }
   .authorisation__label {
     white-space: nowrap;
     display: flex;
-    width: 320px;
+    width: 84.21053%;
     height: 30px;
     margin-top: 40px;
     margin-left: 30px;
@@ -1327,20 +1354,22 @@
     position: absolute;
     display: flex;
     margin-top: 90px;
-    margin-left: 30px; }
+    margin-left: 30px;
+    width: 88.88889%; }
   .authorisation__secname-input {
     position: absolute;
     display: flex;
     margin-top: 144px;
-    margin-left: 30px; }
+    margin-left: 30px;
+    width: 88.88889%; }
   .authorisation__gender-selection {
     display: flex;
     flex-direction: row;
     position: absolute;
     width: 220.74px;
     height: 24.44px;
-    margin-left: 30px;
-    margin-top: 198px;
+    margin-left: 26px;
+    margin-top: 195px;
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
@@ -1348,22 +1377,24 @@
     line-height: 24px;
     color: rgba(31, 32, 65, 0.75); }
     .authorisation__gender-selection_padded {
-      margin-right: 20px; }
+      margin-right: 24px; }
   .authorisation__birthday {
     position: absolute;
     margin-left: 30px;
-    margin-top: 242px; }
+    margin-top: 242px;
+    width: 88.88889%; }
   .authorisation__info {
     position: absolute;
     margin-top: 326px;
-    margin-left: 30px; }
+    margin-left: 30px;
+    width: 88.88889%; }
     .authorisation__info_padded {
       margin-top: 10px; }
   .authorisation__offers {
     position: absolute;
     display: flex;
-    margin-top: 456px;
-    margin-left: 30px; }
+    margin-top: 452px;
+    margin-left: 29px; }
     .authorisation__offers_padded {
       margin-left: 10px; }
   .authorisation__proceed {
@@ -1377,9 +1408,57 @@
     margin-top: 572px;
     margin-left: 30px;
     width: 320px;
-    height: 44px; }
+    height: 44px;
+    width: 88.88889%; }
     .authorisation__login-button_padded {
       margin-left: 35px; }
+  .authorisation__login {
+    width: 380px;
+    height: 358px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin-top: 163px; }
+    @media screen and (max-height: 1024px) {
+      .authorisation__login {
+        margin-top: 80px; } }
+    @media screen and (max-width: 480px) {
+      .authorisation__login {
+        margin-top: 0;
+        width: 100vw; } }
+  .authorisation__login-label {
+    margin-top: 40px;
+    margin-left: 30px; }
+  .authorisation__login-info {
+    margin-left: 29px; }
+    .authorisation__login-info_padded {
+      margin-top: 12px; }
+  .authorisation__login-proceed {
+    position: absolute;
+    margin-top: 22px;
+    margin-left: 29px; }
+  .authorisation__register-button {
+    position: absolute;
+    display: flex;
+    margin-left: 29px;
+    margin-top: 94px;
+    width: 88.88889%;
+    align-items: center; }
+    .authorisation__register-button_padded {
+      margin-left: 57px; }
+
+.details {
+  display: flex;
+  width: 100vw;
+  height: 1494px; }
+  .details__room-photos {
+    display: flex;
+    width: 100vw;
+    height: 485px;
+    background-image: url("/image/room_main.png");
+    background-size: 100%; }
 
 body {
   padding: 0;
@@ -1427,6 +1506,28 @@ h1 {
   line-height: 30px;
   /* Dark 100% */
   color: #1F2041; }
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
 
 a:link {
   color: rgba(31, 32, 65, 0.5);

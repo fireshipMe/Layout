@@ -1,0 +1,178 @@
+.details {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 1494px;
+
+    &__description {
+        &_top {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 24px;
+            /* or 171% */
+
+
+            /* Dark 75% */
+
+            color: rgba(31, 32, 65, 0.75);
+        }
+        &_bottom {
+            white-space: nowrap;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            /* or 171% */
+
+
+            /* Dark 75% */
+
+            color: rgba(31, 32, 65, 0.75);
+        }
+    }
+
+
+
+    &__icon {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        &_large {
+            font-size: 44px;
+            line-height: 41px;
+            background: $purple_gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &_padded {
+            margin-top: 40px;
+        }
+    }
+
+    &__room-photos {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 485px;
+
+        &_main {
+            display: flex;
+            background-image: url('/images/room_main.png');
+            background-repeat: no-repeat;
+            width: 981px;
+            height: 485px;
+        }
+
+        &_minors {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &_minor-top {
+            display: flex;
+            background-image: url('/images/room_minor_top.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 461px;
+            height: 243px;
+        }
+
+        &_minor-bottom {
+            display: flex;
+            background-image: url('/images/room_minor_bottom.png');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 461px;
+            height: 242px;
+
+        }
+    }
+
+    &__room-info {
+        display: flex;
+        width: 1440px;
+        height: 940px;
+
+        &_main {
+            width: 710px;
+            height: 727px;
+        }
+    }
+
+    &__room-facts {
+        position: absolute;
+        margin-top: 70px;
+        margin-left: 140px;
+        &_comfy {
+            display: relative;
+        }
+        &_comfy-description {
+            position: absolute;
+            width: 233px;
+            height: 48px;
+            margin-left: 92.5px+58px;
+        }
+    }
+
+    &__break {
+        width: 280px;
+        height: 1px;
+        background: rgba(31, 32, 65, 0.1);
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: -44px;
+    }
+
+    &__review {
+        width:711px;
+        position: absolute;
+
+        margin-top: 928px-70px;
+        margin-left: 139px;
+        &-counter {
+            position: absolute;
+            margin-left: 788px - 139px;
+            margin-top: -22px;
+        }
+    }
+
+    &__review-body {
+        display: flex;
+        width: 711px;
+        height: 130px;
+        margin-top: 20px;
+    }
+
+    &__review-photo {
+        width: 48px;
+        height: 48px;
+        background: url('images/review_murad.png');
+        background-position: center;
+        background-position-y: -12px;
+        background-repeat: no-repeat;
+        border: 2px solid #FFFFFF;
+        box-sizing: border-box;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+        border-radius: 32px;
+    }
+
+    &__reviewer-name {
+        margin-left: 10px;
+        margin-top: 4px;
+    }
+
+    &__review-text {
+        display: flex;
+        position: absolute;
+        margin-top: 58px;
+        margin-left: 58px;
+        width: 653px;
+        height: 72px;
+    }
+}

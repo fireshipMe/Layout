@@ -1,0 +1,57 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    body
+        include ../../includes/header/header.pug 
+        .details
+            .details__room-photos
+                .details__room-photos_main
+                .details__room-photos_minors
+                    .details__room-photos_minor-top
+                    .details__room-photos_minor-bottom
+            .details__room-info
+                .details__room-info_main
+                    .details__room-facts
+                        h2  Cведения о номере
+                        .details__room-facts_comfy
+                            .details__icon
+                                i(class="details__icon_large material-icons") mood
+                                .details__room-facts_comfy-description
+                                    .details__description_top
+                                        p Комфорт
+                                    .details__description_bottom
+                                        p Шумопоглощающие стены
+                                    .details__break
+                        .details__room-facts_comfy
+                            .details__icon.details__icon_padded
+                                i(class="details__icon_large material-icons") location_city
+                                .details__room-facts_comfy-description
+                                    .details__description_top
+                                        p Комфорт
+                                    .details__description_bottom
+                                        p Шумопоглощающие стены
+                                    .details__break
+                        .details__room-facts_comfy
+                            .details__icon.details__icon_padded
+                                i(class="details__icon_large material-icons") whatshot
+                                .details__room-facts_comfy-description
+                                    .details__description_top
+                                        p Комфорт
+                                    .details__description_bottom
+                                        p Шумопоглощающие стены
+            .details__review
+                .details__review-label
+                    h2 Отзывы посетителей номера
+                    .details__review-counter
+                        | 2 отзыва
+                .details__review-body
+                    .details__review-photo
+                    .details__reviewer-name
+                        h3 Мурад Сарафанов   
+                        | 5 дней назад
+                    .details__review-text
+                        | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+        include ../../includes/footer-main/footer-main.pug

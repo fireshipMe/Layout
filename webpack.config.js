@@ -33,6 +33,10 @@ const config = {
       filename: 'register.html',
       template: './src/html/views/authorisation/register.pug'
     }),
+    new HtmlWebpackPlugin({
+      filename: 'room-details.html',
+      template: './src/html/views/room-details/room-details.pug'
+    }),
     new MiniCssExtractPlugin({
       filename: "style.css",
       chunkFilename: "[name].css"

@@ -10,4 +10,12 @@ $(document).ready(function() {
     $(".header__register-button").click(function() {
         location.href='/register.html';
     });
+
+    $(".button_create-account").click(function() {
+        location.href='/register.html';
+    });
+
+    $(".authorisation__login-button_padded").click(function() {
+        location.href='/login.html';
+    });
 });
