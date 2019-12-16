@@ -37,6 +37,10 @@ const config = {
       filename: 'room-details.html',
       template: './src/html/views/room-details/room-details.pug'
     }),
+    new HtmlWebpackPlugin({
+      filename: 'room-search.html',
+      template: './src/html/views/room-search/room-search.pug'
+    }),
     new MiniCssExtractPlugin({
       filename: "style.css",
       chunkFilename: "[name].css"

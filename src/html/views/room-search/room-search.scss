@@ -1,0 +1,89 @@
+.room-search {
+    width: 100%;
+    height: 1385px;
+    &__rooms {
+        position: absolute;
+        margin-left: 466px;
+        margin-top: 81px;
+        margin-right: 140px;
+
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 20.5px;
+        grid-column-gap: 12px;
+    }
+
+    &__header {
+        position: absolute;
+        margin-left: 466px;
+        margin-top: 30px;
+    }
+
+    &__filter {
+        position: absolute;
+        height: 100%;
+        width: 266px;
+        margin-top: 30px;
+        margin-left: 140px;
+    }
+
+    &__date-dropdown {
+        width: 266px;
+    }
+
+    &__guests {
+        margin-top: 20px;
+    }
+
+    &__price {
+        margin-left: 45px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+        /* identical to box height */
+
+        text-align: right;
+        text-transform: uppercase;
+
+        /* Dark 50% */
+
+        color: $dark_shade_50;
+    }
+
+    &__price-range {
+        width: 266px;
+        display: flex;
+    }
+
+    &__price-slider {
+        margin-top: 30px;
+    }
+
+    &__price-description {
+        margin-top: 14px;
+    }
+
+    &__slider {
+        margin-top: 18px;
+    }
+
+    &__checkbox-buttons {
+        position: absolute;
+        margin-top: 30px;
+    }
+
+    &__smoking {
+        margin-top: 15px;
+    }
+
+    &__pets {
+        margin-top: 10px;
+    }
+
+    &__checkbox-guests {
+        margin-top: 10px;
+    }
+}

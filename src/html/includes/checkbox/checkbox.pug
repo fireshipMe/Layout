@@ -1,9 +1,5 @@
-mixin checkbox(type, arrow)
-    div
-        label
-            input(type="checkbox" class="checkbox")
-        
-        
-        
-
-        
+mixin checkbox(label)
+    .checkbox__container
+        input(type="checkbox" class="checkbox")
+        .checkbox__label
+            =label

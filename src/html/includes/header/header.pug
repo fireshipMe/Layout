@@ -1,25 +1,25 @@
 include ../button/button.pug
-
-header(class="header")
-    div(class="header__flex-container")
-        div(class="header__logo")
-        div(class="header__dropdown")
-            i(class="material-icons") list
-        div(class="header__links")
-            //- a(class="header__text header__text_bold") Home
-            a(class="header__text") О нас 
-            div(class="header__dropdown-container")
-                a(class="header__text header__text_regular-spaced") Услуги
-                div(class="header__arrow-container")
-                    i(class="material-icons header__text header__arrow-icon") keyboard_arrow_down
-            a(class="header__text header__text_regular-spaced") Вакансии 
-            a(class="header__text header__text_regular-spaced") Новости
-            div(class="header__dropdown-container")
-                a(class="header__text header__text_regular-spaced") Соглашения
-                div(class="header__arrow-container")
-                    i(class="material-icons header__text header__arrow-icon") keyboard_arrow_down 
-        .header__buttons
-            .header__login-button
-                +button("button button_gradiented button_login-button", "ВОЙТИ")
-            .header__register-button
-                +button("button button_filled button_register-button", "ЗАРЕГИСТРИРОВАТЬСЯ")
+mixin header()
+    header(class="header")
+        div(class="header__flex-container")
+            div(class="header__logo")
+            div(class="header__dropdown")
+                i(class="material-icons") list
+            div(class="header__links")
+                //- a(class="header__text header__text_bold") Home
+                a(class="header__text") О нас 
+                div(class="header__dropdown-container")
+                    a(class="header__text header__text_regular-spaced") Услуги
+                    div(class="header__arrow-container")
+                        i(class="material-icons header__text header__arrow-icon") keyboard_arrow_down
+                a(class="header__text header__text_regular-spaced") Вакансии 
+                a(class="header__text header__text_regular-spaced") Новости
+                div(class="header__dropdown-container")
+                    a(class="header__text header__text_regular-spaced") Соглашения
+                    div(class="header__arrow-container")
+                        i(class="material-icons header__text header__arrow-icon") keyboard_arrow_down 
+            .header__buttons
+                .header__login-button
+                    +button("button button_gradiented button_login-button", "ВОЙТИ")
+                .header__register-button
+                    +button("button button_filled button_register-button", "ЗАРЕГИСТРИРОВАТЬСЯ")

@@ -1,3 +1,6 @@
+include ../../includes/like/like.pug
+include ../../includes/footer-main/footer-main.pug
+
 doctype html
 html
     head
@@ -30,28 +33,52 @@ html
                                 i(class="details__icon_large material-icons") location_city
                                 .details__room-facts_comfy-description
                                     .details__description_top
-                                        p Комфорт
+                                        p Удобство
                                     .details__description_bottom
-                                        p Шумопоглощающие стены
+                                        p Окно в каждой из спален
                                     .details__break
                         .details__room-facts_comfy
                             .details__icon.details__icon_padded
                                 i(class="details__icon_large material-icons") whatshot
                                 .details__room-facts_comfy-description
                                     .details__description_top
-                                        p Комфорт
+                                        p Уют
                                     .details__description_bottom
-                                        p Шумопоглощающие стены
+                                        p Номер оснащен камином
+                .details__emotions
+                        
             .details__review
                 .details__review-label
                     h2 Отзывы посетителей номера
                     .details__review-counter
                         | 2 отзыва
-                .details__review-body
-                    .details__review-photo
+                .details__review-body_top
+                    .details__review-photo_top
+                    .details__like_top
+                        +like(12, "on")
                     .details__reviewer-name
                         h3 Мурад Сарафанов   
                         | 5 дней назад
                     .details__review-text
                         | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
-        include ../../includes/footer-main/footer-main.pug
+                .details__review-body_bottom
+                    .details__review-photo_bottom
+                    .details__like_top
+                        +like(2, "off")                      
+                    .details__reviewer-name
+                        h3 Патрисия Стёклышкова  
+                        | Неделю назад
+                    .details__review-text
+                        | Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент   
+                .details__rules
+                    .details__rules-list
+                        h2(class="details__rules-header") Правила
+                        ul(class="details__rules-ul")
+                            li(class="details__rules-li") Нельзя с питомцами
+                            li(class="details__rules-li") Без вечеринок и мероприятий
+                            li(class="details__rules-li") Время прибытия — после 13:00, а выезд до 12:00
+                    .details__rules-cancelation
+                        h2 Отмена
+                        p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+        +footer()

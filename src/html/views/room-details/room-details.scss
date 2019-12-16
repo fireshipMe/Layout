@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 1494px;
+    height: 1300x;
 
     &__description {
         &_top {
@@ -142,17 +142,37 @@
         }
     }
 
-    &__review-body {
+    &__review-body_top {
         display: flex;
         width: 711px;
         height: 130px;
         margin-top: 20px;
     }
 
-    &__review-photo {
+    &__review-body_bottom {
+        display: flex;
+        width: 711px;
+        height: 130px;
+        margin-top: 22px;
+    }
+
+    &__review-photo_top {
         width: 48px;
         height: 48px;
         background: url('images/review_murad.png');
+        background-position: center;
+        background-position-y: -12px;
+        background-repeat: no-repeat;
+        border: 2px solid #FFFFFF;
+        box-sizing: border-box;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+        border-radius: 32px;
+    }
+
+    &__review-photo_bottom {
+        width: 48px;
+        height: 48px;
+        background: url('images/review_patrizia.png');
         background-position: center;
         background-position-y: -12px;
         background-repeat: no-repeat;
@@ -175,4 +195,55 @@
         width: 653px;
         height: 72px;
     }
+
+    &__like {
+        &_top {
+            position: absolute;
+            margin-top: 60px;
+            margin-left: 4px;
+        }
+    }
+
+    &__rules {
+        position: absolute;
+        width: 292px;
+        height: 160px;
+        display: flex;
+        flex-direction: row;
+        &-header {
+            position: absolute;
+            display: flex;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        &-ul {
+            margin-top: 51px;
+            margin-left: -22px;
+        }
+
+        &-li {
+            list-style-image: url("data:image/svg+xml,%3Csvg width='11' height='10' viewBox='0 0 11 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='5.21429' cy='5' rx='5.21429' ry='5' fill='%231F2041' fill-opacity='0.25'/%3E%3C/svg%3E%0A");
+            margin-top: 10px;
+        }
+
+        &-cancelation {
+            width: 341px;
+            height: 140px;
+            position: absolute;
+            margin-left: 361px;
+            margin-top: 10px;
+        }
+    }
+
+    &__emotions {
+        background-image: url("data:image/svg+xml,%3Csvg width='120' height='121' viewBox='0 0 120 121' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0' mask-type='alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='59' height='121'%3E%3Cpath d='M0 0H59V121H0V0Z' fill='%23C4C4C4'/%3E%3C/mask%3E%3Cg mask='url(%23mask0)'%3E%3Ccircle cx='60' cy='61' r='58' stroke='url(%23paint0_linear)' stroke-width='4'/%3E%3C/g%3E%3Cmask id='mask1' mask-type='alpha' maskUnits='userSpaceOnUse' x='61' y='1' width='59' height='59'%3E%3Cpath d='M61 1H120V60H61V1Z' fill='%23C4C4C4'/%3E%3C/mask%3E%3Cg mask='url(%23mask1)'%3E%3Ccircle cx='60' cy='61' r='55' stroke='url(%23paint1_linear)' stroke-width='10'/%3E%3C/g%3E%3Cmask id='mask2' mask-type='alpha' maskUnits='userSpaceOnUse' x='61' y='62' width='59' height='59'%3E%3Cpath d='M120 62V121H61L61 62L120 62Z' fill='%23C4C4C4'/%3E%3C/mask%3E%3Cg mask='url(%23mask2)'%3E%3Ccircle cx='60' cy='61' r='58' transform='rotate(90 60 61)' stroke='url(%23paint2_linear)' stroke-width='4'/%3E%3C/g%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='60' y1='1' x2='60' y2='121' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFE39C'/%3E%3Cstop offset='1' stop-color='%23FFBA9C'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear' x1='60' y1='1' x2='60' y2='121' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint2_linear' x1='60' y1='1' x2='60' y2='121' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%236FCF97'/%3E%3Cstop offset='1' stop-color='%2366D2EA'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+        width: 120px;
+        height: 121px;
+        display: flex;
+        position: absolute;
+        margin-left: 501px;
+        margin-top: 114px;
+    }
+
+
 }

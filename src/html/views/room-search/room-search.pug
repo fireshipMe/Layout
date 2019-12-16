@@ -1,0 +1,48 @@
+include ../../includes/footer-main/footer-main.pug
+include ../../includes/header/header.pug
+
+include ../../includes/room-thumbnail/room-thumbnail.pug
+include ../../includes/drop_down/drop_down.pug
+include ../../includes/checkbox/checkbox.pug
+
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    body
+        +header()
+        .room-search
+            .room-search__header
+                h1  Номера, которые мы для вас подобрали
+            .room-search__rooms
+                - var n = 0;
+                while n < 12
+                    +room-thumbnail()
+                    - n++;
+            .room-search__filter
+                .room-search__date
+                    h3 Даты пребывания в отеле
+                    .room-search__date-drop_down
+                        +dropdown("dropdown-container dropdown-container_date-dropdown room-search__date-dropdown", "room-search__dates", "ДД.ММ.ГГГГ")
+                .room-search__guests
+                    h3 Гости
+                    +dropdown("dropdown-container room-search__date-dropdown","guest-counter", "Сколько гостей")
+                .room-search__price-slider
+                    .room-search__price-range
+                        h3 Диапазон цены
+                        p(class="room-search__price", id="price") 5000 - 10000
+                    .room-search__slider(id="slider")
+                    .room-search__price-description
+                        | Стоимость за сутки пребывания в номере
+                .room-search__checkbox-buttons
+                    h3 CHECKBOX BUTTONS
+                    .room-search__checkbox
+                        .room-search__smoking
+                            +checkbox("Можно курить")
+                        .room-search__pets
+                            +checkbox("Можно с питомцами")
+                        .room-search__checkbox-guests
+                            +checkbox("Можно пригласить гостей")
+        +footer()

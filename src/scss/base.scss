@@ -2,25 +2,15 @@
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 @import "vars.scss";
 @import "datepicker.scss";
 @import "dropdown.scss";
 @import "fonts.scss";
 
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-
-@import "src/html/includes/button/button.module.scss";
-@import "src/html/includes/text_input/text_input.scss";
-@import "src/html/includes/drop_down/drop_down.scss";
-@import "src/html/includes/checkbox/checkbox.scss";
-@import "src/html/includes/radiobutton/radiobutton.scss";
-@import "src/html/includes/switch/switch.scss";
-@import "src/html/includes/footer/footer.scss";
-@import "src/html/includes/footer-main/footer-main.scss";
 @import "src/html/includes/header/header.scss";
-@import "src/html/includes/find-card/find-card.scss";
 
 .material-icons {
    font-family: 'Material Icons';
@@ -46,11 +36,26 @@
    /* Support for IE. */
    font-feature-settings: 'liga';
  }
- 
+
+@import "src/html/includes/button/button.module.scss";
+@import "src/html/includes/text_input/text_input.scss";
+@import "src/html/includes/drop_down/drop_down.scss";
+@import "src/html/includes/checkbox/checkbox.scss";
+@import "src/html/includes/radiobutton/radiobutton.scss";
+@import "src/html/includes/switch/switch.scss";
+@import "src/html/includes/footer/footer.scss";
+@import "src/html/includes/footer-main/footer-main.scss";
+@import "src/html/includes/find-card/find-card.scss";
+@import "src/html/includes/like/like.scss";
+@import "src/html/includes/room-thumbnail/room-thumbnail.scss";
+@import "/node_modules/nouislider/distribute/nouislider.css";
 
 @import "src/html/views/landing/landing.scss";
 @import "src/html/views/authorisation/authorisation.scss";
 @import "src/html/views/room-details/room-details.scss";
+@import "src/html/views/room-search/room-search.scss";
+@import "src/html/views/room-search/room-search_slider.scss";
+
 
 body {
    padding: 0;
@@ -65,9 +70,14 @@ body {
    font-family: Montserrat;
    font-style: normal;
    font-weight: normal;
-   font-size: 14px;
-   line-height: 24px;
-   color: $dark_shade_75;
+   font-size: 12px;
+   line-height: 14px;
+   /* identical to box height, or 117% */
+   
+   
+   /* Dark 50% */
+   
+   color: rgba(31, 32, 65, 0.5);
 }
 
 p {
@@ -110,6 +120,7 @@ h1 {
    /* Dark 100% */
 
    color: #1F2041;
+   margin: 0;
 }
 
 

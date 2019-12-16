@@ -1,0 +1,12 @@
+//-
+    amount : number showed on a like button
+    state  : whether it on or off 
+
+mixin like(amount, state)
+    -
+        var type = 'like__border_' + state
+    .like__border(class=type)
+        .like__icon
+            i(class="material-icons like__icon-text ") favorite
+        .like__text 
+            =amount

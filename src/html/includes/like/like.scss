@@ -1,0 +1,56 @@
+.like {
+    &__border {
+        &_on {
+            display: flex;
+            align-items: center;
+            width: 40px;
+            height: 20px;
+            border-radius: 10px;
+            color: #BC9CFF;
+            border: double 1px transparent;
+            background-image: linear-gradient(#fff, #fff), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;        
+            line-height: 15px;
+            text-transform: uppercase;
+        }
+
+        &_off {
+            display: flex;
+            align-items: center;
+            width: 40px;
+            height: 20px;
+            border-radius: 10px;
+            color: rgba(31, 32, 65, 0.25);
+            border: double 1px transparent;
+            background-image: linear-gradient(#fff, #fff), linear-gradient(180deg, rgba(31, 32, 65, 0.25) 0%, rgba(31, 32, 65, 0.25) 100%);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;        
+            line-height: 15px;
+            text-transform: uppercase;
+        }
+        
+    }
+
+   &__icon {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    line-height: 9px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 5px;
+    &-text {
+        display: flex;
+        font-size: 10px;
+    }
+   }
+
+   &__text {
+        display: flex;
+        position: absolute;
+        margin-left: 20px;
+        font-size: 10px;
+   }
+}

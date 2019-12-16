@@ -1,0 +1,33 @@
+.noUi-target {
+    background: #FFFFFF;
+    height: 6px;
+    border: 1px solid $dark_shade_25;
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: none;
+}
+
+.noUi-handle {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    box-shadow: none;
+    outline: none;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 16px;
+    height: 16px;
+    top: -6px;
+}
+.noUi-handle:before,
+.noUi-handle:after {
+  display: none;
+}
+
+.noUi-connect {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 3px;
+    left: 10px;
+    height: 6px;
+}

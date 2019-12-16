@@ -4,6 +4,7 @@ include html/includes/drop_down/drop_down.pug
 include html/includes/checkbox/checkbox.pug
 include html/includes/radiobutton/radiobutton.pug
 include html/includes/switch/switch.pug
+include html/includes/like/like.pug
 
 include html/mixins/checkbox_arrow.pug
 
@@ -17,4 +18,4 @@ html
         link(rel="stylesheet" href="../node_modules/air-datepicker/dist/css/datepicker.min.css")
 
     body
-        include html/includes/footer-main/footer-main.pug
+        +like(12)
