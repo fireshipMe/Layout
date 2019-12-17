@@ -86,4 +86,59 @@
     &__checkbox-guests {
         margin-top: 10px;
     }
+
+    &__availability {
+        margin-top: 190px;
+    }
+
+    &__wideness {
+        margin-top: 17px;
+        display: flex;
+        flex-direction: column;
+        width: 266px;
+        height: 62px;
+        &-description {
+            width: 203px;
+            height: 28px;
+            display: flex;
+            margin-left: 30px;
+            margin-top: 5px;
+        }
+    }
+
+    &__helper {
+        width: 266px;
+        height: 62px;
+        display: flex;
+        flex-direction: column;
+        &-description {
+            width: 230px;
+            height: 28px;
+            display: flex;
+            margin-left: 30px;
+            margin-top: 5px;
+        }
+    }
+
+    &__facilities {
+        width: 266px;
+        margin-top: 20px;
+    }
+
+    &__dropdown-icon {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -15px;
+        margin-left: 13px;
+    }
+
+    &__additional-facilities {
+        width: 266px;
+        margin-top: 30px;
+        display: flex;
+        white-space: nowrap;
+    }
 }

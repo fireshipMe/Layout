@@ -1,5 +1,42 @@
 .room-thumbnail {
-    background-color: pink;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
     height: 257px;
     width: 270px;
+    &__photo {
+        background-color: brown;
+        height: 151px;
+        width: 270px;
+    }
+
+    &__number {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 17px;
+
+        /* Dark 100% */
+
+        color: $dark_shade_100;
+
+        margin-left: 20px;
+        margin-top: 25px;
+    }
+    &__break {
+        width: 230px;
+        height: 1px;
+
+        margin-left: 20px;
+        margin-top: 12px;
+
+        background: $dark_shade_10;
+    }
+
+    &__stars {
+        margin-top: 8px;
+        margin-left: 20px;
+        
+    }
 }

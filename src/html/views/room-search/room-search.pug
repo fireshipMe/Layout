@@ -4,6 +4,7 @@ include ../../includes/header/header.pug
 include ../../includes/room-thumbnail/room-thumbnail.pug
 include ../../includes/drop_down/drop_down.pug
 include ../../includes/checkbox/checkbox.pug
+include ../../includes/drop_down/drop_down.pug
 
 doctype html
 html
@@ -19,7 +20,7 @@ html
             .room-search__rooms
                 - var n = 0;
                 while n < 12
-                    +room-thumbnail()
+                    +room-thumbnail("888")
                     - n++;
             .room-search__filter
                 .room-search__date
@@ -45,4 +46,21 @@ html
                             +checkbox("Можно с питомцами")
                         .room-search__checkbox-guests
                             +checkbox("Можно пригласить гостей")
+                .room-search__availability
+                    h3 Доступность
+                    .room-search__wideness
+                        +checkbox("Широкий коридор", "true")
+                        .room-search__wideness-description
+                            | Ширина коридоров в номере не менее 91 см. 
+                    .room-search__helper
+                        +checkbox("Помощник для инвалидов", "true")
+                        .room-search__helper-description
+                            | На 1 этаже вас встретит специалист и проводит до номера. 
+                .room-search__facilities
+                    h3 Удобства номера
+                    +dropdown("dropdown-container room-search__date-dropdown","facilities-counter", "Без удобств")
+                .room-search__additional-facilities
+                    h3 Дополнительные удобства
+                    .room-search__dropdown-icon
+                        i(class="material-icons") keyboard_arrow_down
         +footer()

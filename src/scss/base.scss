@@ -37,6 +37,7 @@
    font-feature-settings: 'liga';
  }
 
+@import "src/html/includes/rating/rating.scss";
 @import "src/html/includes/button/button.module.scss";
 @import "src/html/includes/text_input/text_input.scss";
 @import "src/html/includes/drop_down/drop_down.scss";

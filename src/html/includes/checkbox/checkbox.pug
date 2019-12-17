@@ -1,5 +1,9 @@
-mixin checkbox(label)
+//- type is either bold or not specified, which means regular
+mixin checkbox(label, bald)
+    - var kind = 'checkbox__label';
+    if bald
+       - kind = kind + ' checkbox__label_bold';
     .checkbox__container
         input(type="checkbox" class="checkbox")
-        .checkbox__label
+        div(class= kind)
             =label

@@ -83,4 +83,41 @@ $(document).ready(function() {
         let prices = slider.noUiSlider.get()
         document.getElementById('price').innerHTML = parseInt(prices[0]) + "₽" + " - " + parseInt(prices[1]) + '₽'
       })
+
+      var valsDict = {'Спальни' : 0, 'Кровати' : 0, 'Ванные комнаты' : 0}
+      var vals = []
+      $('#facilities-counter').dropdown({
+        type: 'counter',
+        fields: [
+            {
+              label: 'Спальни',
+              maxCount: 2,
+              minCount: 0,
+              startCount: 0,
+              step: 1
+            },
+            {
+              label: 'Кровати',
+              maxCount: 4
+            },
+            {
+              label: 'Ванные комнаты',
+              maxCount: 2
+            }      
+        ],
+        acceptButton: true,
+        clearButton: true,
+        onChange(changedValue, curCount, valuesSum, inst) {
+          var str = ''
+          // build string
+          if (vals.indexOf(changedValue) == -1) {
+            valsDict[changedValue] = curCount
+          }
+          for(var i in valsDict) {
+            
+            str += i + ":" + valsDict[i] + " "
+          }
+          inst.$el.val(str)
+        }
+      })
 });

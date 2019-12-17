@@ -1,2 +1,12 @@
-mixin room-thumbnail()
+include ../../includes/rating/rating.pug
+
+mixin room-thumbnail(number, rating)
     .room-thumbnail
+        .room-thumbnail__photo
+        .room-thumbnail__number
+            | №  
+            =number
+        .room-thumbnail__break
+        
+        .room-thumbnail__stars
+            +rating()

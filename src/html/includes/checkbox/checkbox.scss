@@ -38,6 +38,11 @@
         /* Dark 50% */
 
         color: $dark_shade_50;
+
+        &_bold {
+            font-weight: bold;
+            color: $dark_shade_75;
+        }
     }
 
 }
