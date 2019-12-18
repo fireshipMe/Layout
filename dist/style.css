@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Quicksand);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(/node_modules/nouislider/distribute/nouislider.css);
 /* Colors */
 /* \Colors */
 .datepicker__cells {
@@ -835,6 +836,14 @@
   /* Support for IE. */
   font-feature-settings: 'liga'; }
 
+.rating {
+  width: 120px;
+  height: 24px;
+  display: flex;
+  background: #bc9cff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
 .button {
   outline: none;
   border: none;
@@ -977,6 +986,7 @@
         width: 39vw; } }
 
 .checkbox {
+  margin: 0;
   -webkit-appearance: none;
   outline: none;
   width: 20px;
@@ -990,6 +1000,22 @@
     background-image: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.46439 2.40768L5.70703 6.65032L4.29282 8.06453L0.0501771 3.82189L1.46439 2.40768Z' fill='url(%23grad)'/%3E%3Cpath d='M8.53546 0.993466L9.94967 2.40768L4.29282 8.06453L2.8786 6.65032L8.53546 0.993466Z' fill='url(%23grad)'/%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='7.82835' y1='2.28636' x2='2.1715' y2='7.94321' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-position: 50% 50%; }
+  .checkbox__container {
+    display: flex;
+    align-items: center; }
+  .checkbox__label {
+    margin-left: 10px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height, or 129% */
+    /* Dark 50% */
+    color: rgba(31, 32, 65, 0.5); }
+    .checkbox__label_bold {
+      font-weight: bold;
+      color: rgba(31, 32, 65, 0.75); }
 
 .radio {
   outline: none;
@@ -1326,6 +1352,110 @@
   position: absolute;
   margin-left: 20px;
   font-size: 10px; }
+
+.room-thumbnail {
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+  height: 257px;
+  width: 270px; }
+  .room-thumbnail__photo {
+    background-color: brown;
+    height: 151px;
+    width: 270px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px; }
+  .room-thumbnail__number {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 17px;
+    /* Dark 100% */
+    color: #1f2041;
+    margin-left: 20px;
+    margin-top: 25px; }
+  .room-thumbnail__break {
+    width: 230px;
+    height: 1px;
+    margin-left: 20px;
+    margin-top: 12px;
+    background: rgba(31, 32, 65, 0.1); }
+  .room-thumbnail__stars {
+    margin-top: 8px;
+    margin-left: 20px; }
+  .room-thumbnail__luxe {
+    position: absolute;
+    margin-left: 80px;
+    margin-top: -15px; }
+    .room-thumbnail__luxe-text {
+      color: #BC9CFF; }
+  .room-thumbnail__price {
+    position: absolute;
+    margin-left: 153px;
+    margin-top: -15px;
+    font-size: 14px; }
+    .room-thumbnail__price_bold {
+      font-weight: bold; }
+    .room-thumbnail__price_small {
+      font-size: 12px; }
+  .room-thumbnail__reviews {
+    width: 233px;
+    position: absolute;
+    margin-left: 17px;
+    margin-top: 26px;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 14px;
+    align-items: center; }
+    .room-thumbnail__reviews_bold {
+      font-weight: bold; }
+    .room-thumbnail__reviews_small {
+      margin-top: 1px;
+      margin-left: 4px; }
+  .room-thumbnail__left-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    color: #FFFFFF;
+    margin-top: 53px;
+    transform: rotate(90deg);
+    position: absolute; }
+  .room-thumbnail__right-arrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    color: #FFFFFF;
+    transform: rotate(-90deg);
+    margin-left: 226px;
+    margin-top: 53px; }
+  .room-thumbnail__photo-switch {
+    position: absolute;
+    width: 41.25px;
+    height: 7.49px;
+    margin-top: 128px;
+    margin-left: 214px;
+    display: flex;
+    justify-content: space-between; }
+  .room-thumbnail__circle {
+    width: 7.5px;
+    height: 7.5px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+    border-radius: 50%; }
+    .room-thumbnail__circle_unselected {
+      border-radius: 50%;
+      border-style: solid;
+      width: 6px;
+      height: 6px;
+      border-width: 1px;
+      border-color: white;
+      background-color: rgba(0, 0, 0, 0); }
 
 .landing {
   background-image: url("/images/landing-background.png");
@@ -1697,6 +1827,135 @@
     margin-left: 501px;
     margin-top: 114px; }
 
+.room-search {
+  width: 100%;
+  height: 1385px; }
+  .room-search__rooms {
+    position: absolute;
+    margin-left: 466px;
+    margin-top: 81px;
+    margin-right: 140px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 20.5px;
+    grid-column-gap: 12px; }
+  .room-search__header {
+    position: absolute;
+    margin-left: 466px;
+    margin-top: 30px; }
+  .room-search__filter {
+    position: absolute;
+    height: 100%;
+    width: 266px;
+    margin-top: 30px;
+    margin-left: 140px; }
+  .room-search__date-dropdown {
+    width: 266px; }
+  .room-search__guests {
+    margin-top: 20px; }
+  .room-search__price {
+    margin-left: 45px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    text-align: right;
+    text-transform: uppercase;
+    /* Dark 50% */
+    color: rgba(31, 32, 65, 0.5); }
+  .room-search__price-range {
+    width: 266px;
+    display: flex; }
+  .room-search__price-slider {
+    margin-top: 30px; }
+  .room-search__price-description {
+    margin-top: 14px; }
+  .room-search__slider {
+    margin-top: 18px; }
+  .room-search__checkbox-buttons {
+    position: absolute;
+    margin-top: 30px; }
+  .room-search__smoking {
+    margin-top: 15px; }
+  .room-search__pets {
+    margin-top: 10px; }
+  .room-search__checkbox-guests {
+    margin-top: 10px; }
+  .room-search__availability {
+    margin-top: 190px; }
+  .room-search__wideness {
+    margin-top: 17px;
+    display: flex;
+    flex-direction: column;
+    width: 266px;
+    height: 62px; }
+    .room-search__wideness-description {
+      width: 203px;
+      height: 28px;
+      display: flex;
+      margin-left: 30px;
+      margin-top: 5px; }
+  .room-search__helper {
+    width: 266px;
+    height: 62px;
+    display: flex;
+    flex-direction: column; }
+    .room-search__helper-description {
+      width: 230px;
+      height: 28px;
+      display: flex;
+      margin-left: 30px;
+      margin-top: 5px; }
+  .room-search__facilities {
+    width: 266px;
+    margin-top: 20px; }
+  .room-search__dropdown-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -15px;
+    margin-left: 13px; }
+  .room-search__additional-facilities {
+    width: 266px;
+    margin-top: 30px;
+    display: flex;
+    white-space: nowrap; }
+
+.noUi-target {
+  background: #FFFFFF;
+  height: 6px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 3px;
+  box-shadow: none; }
+
+.noUi-handle {
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  box-shadow: none;
+  outline: none; }
+
+.noUi-horizontal .noUi-handle {
+  width: 16px;
+  height: 16px;
+  top: -6px; }
+
+.noUi-handle:before,
+.noUi-handle:after {
+  display: none; }
+
+.noUi-connect {
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 3px;
+  left: 10px;
+  height: 6px; }
+
 body {
   padding: 0;
   margin: 0; }
@@ -1708,9 +1967,11 @@ body {
   font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 24px;
-  color: rgba(31, 32, 65, 0.75); }
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height, or 117% */
+  /* Dark 50% */
+  color: rgba(31, 32, 65, 0.5); }
 
 p {
   margin: 0; }
@@ -1743,7 +2004,8 @@ h1 {
   font-size: 24px;
   line-height: 30px;
   /* Dark 100% */
-  color: #1F2041; }
+  color: #1F2041;
+  margin: 0; }
 
 a:link {
   color: rgba(31, 32, 65, 0.5);

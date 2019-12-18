@@ -1,12 +1,50 @@
 include ../../includes/rating/rating.pug
 
-mixin room-thumbnail(number, rating)
+//- s.e -- self explanatory
+    number -- s.e.
+    rating -- amount of stars
+    isLuxe -- if true thumbnail will have /luxe/ mark
+    price -- s.e.
+    reviews -- amount of reviews
+    image -- image number from 1 to 12
+mixin room-thumbnail(number, rating, isLuxe, price, reviews, image)
     .room-thumbnail
-        .room-thumbnail__photo
+        - var divName = "room-thumbnail__photo_" + image
+        .room-thumbnail__photo(class=divName)
+            - image = "images/image-" + image + ".png"
+            .room-thumbnail__slider
+                style(type="text/css").
+                    .#{divName} {
+                        background-image: url('#{image}')
+                    }
+                .room-thumbnail__left-arrow
+                    i(class="material-icons") expand_more
+                .room-thumbnail__right-arrow
+                    i(class="material-icons") expand_more
+                .room-thumbnail__photo-switch
+                    .room-thumbnail__circle(class="room-thumbnail__circle_selected")
+                    .room-thumbnail__circle(class="room-thumbnail__circle_unselected")
+                    .room-thumbnail__circle(class="room-thumbnail__circle_unselected")
+                    .room-thumbnail__circle(class="room-thumbnail__circle_unselected")
+                    
         .room-thumbnail__number
             | №  
             =number
+        if isLuxe
+            .room-thumbnail__luxe
+                h3(class="room-thumbnail__luxe-text") Люкс
+        .room-thumbnail__price
+            - price = price + "₽ "
+            span(class="room-thumbnail__price_bold")
+                =price
+            span(class="room-thumbnail__price_small")
+                | в сутки
+        .room-thumbnail__reviews
+            span(class="room-thumbnail__reviews_small") 
+                | Отзывов
+            span(class="room-thumbnail__reviews_bold")
+                =reviews
+
         .room-thumbnail__break
-        
         .room-thumbnail__stars
-            +rating()
+            +rating(rating)

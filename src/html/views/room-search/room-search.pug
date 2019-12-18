@@ -19,8 +19,12 @@ html
                 h1  Номера, которые мы для вас подобрали
             .room-search__rooms
                 - var n = 0;
+                - var prices = ["9 900", "9 900", "8 500", "7 300", "6 000", "5 800", "5 500", "5 300", "5 000", "5 000", "5 000", "5 000"]
+                - var numbers = ["888", "840", "983", "980", "856", "740", "512", "387", "898", "534", "123", "253"]
+                - var isLuxe = [true,false,true,false,false,false,false,false,false,false,false,false]
+                - var rating = [5,4,3,5,4,3,5,4,3,5,3,3]
                 while n < 12
-                    +room-thumbnail("888")
+                    +room-thumbnail(numbers[n], rating[n], isLuxe[n], prices[n], "145", n)
                     - n++;
             .room-search__filter
                 .room-search__date

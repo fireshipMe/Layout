@@ -1,8 +1,12 @@
 
 mixin rating(stars)
     .rating
-        i(class="material-icons") star
-        i(class="material-icons") star
-        i(class="material-icons") star
-        i(class="material-icons") star
-        i(class="material-icons") star
+        - var n = 0;
+        - var j = 5 - stars
+            while n < stars 
+                i(class="material-icons") star
+                - n++;
+        - var n = 0;    
+            while n < j 
+                i(class="material-icons") star_border
+                - n++
