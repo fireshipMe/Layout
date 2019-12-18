@@ -5,6 +5,7 @@ include ../../includes/room-thumbnail/room-thumbnail.pug
 include ../../includes/drop_down/drop_down.pug
 include ../../includes/checkbox/checkbox.pug
 include ../../includes/drop_down/drop_down.pug
+include ../../includes/pagination/pagination.pug
 
 doctype html
 html
@@ -67,4 +68,6 @@ html
                     h3 Дополнительные удобства
                     .room-search__dropdown-icon
                         i(class="material-icons") keyboard_arrow_down
+        .room-search__pagination
+            +pagination()
         +footer()

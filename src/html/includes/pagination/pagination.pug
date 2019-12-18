@@ -1,0 +1,16 @@
+mixin pagination()
+    .pagination
+        .pagination_current
+            | 1
+        .pagination_nearest
+            | 2
+        .pagination_nearest
+            | 3
+        .pagination_skip
+            | ...
+        .pagination_last
+            | 15
+        .pagination__next_page
+            i(class="material-icons pagination__arrow-icon") arrow_forward
+    .pagination__info
+        | 1 – 12 из 100+ вариантов аренды

@@ -36,7 +36,7 @@
    /* Support for IE. */
    font-feature-settings: 'liga';
  }
-
+@import "src/html/includes/pagination/pagination.scss";
 @import "src/html/includes/rating/rating.scss";
 @import "src/html/includes/button/button.module.scss";
 @import "src/html/includes/text_input/text_input.scss";

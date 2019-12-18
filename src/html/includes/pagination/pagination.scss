@@ -1,0 +1,45 @@
+.pagination {
+    display: flex;
+    width: 241px;
+    &_current {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: $purple_main;
+        border-radius: 22px;
+        color: white;
+        font-weight: bold;
+        
+    }
+
+    &_nearest, &_skip, &_last {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;        
+    }
+
+    &__next_page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        border-radius: 22px;
+    }
+
+    &__arrow-icon {
+        color: white;
+    }
+
+    &__info {
+        margin-top: 13px;
+        margin-left: 5px;
+        font-size: 14px;
+    }
+
+}
