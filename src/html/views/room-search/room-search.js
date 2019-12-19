@@ -120,4 +120,19 @@ $(document).ready(function() {
           inst.$el.val(str)
         }
       })
+
+      $(".room-search__additional-facilities").click(function() {
+        let list = $(".room-search__additional-facilities-list")
+        let icon = $(".room-search__dropdown-icon")
+        if(list.css("display") == "none") {
+          // expanded
+          list.css("display", "flex")
+          icon.css("transform", "rotate(-180deg)")
+        } else {
+          // collapsed
+          list.css("display", "none")
+          icon.css("transform", "rotate(0deg)")
+        }
+        
+      })
 });

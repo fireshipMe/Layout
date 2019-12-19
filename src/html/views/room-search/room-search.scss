@@ -19,6 +19,7 @@
         position: absolute;
         margin-left: 466px;
         margin-top: 30px;
+        white-space: nowrap;
     }
 
     &__filter {
@@ -128,6 +129,7 @@
 
     &__dropdown-icon {
         width: 44px;
+        transform: rotate(0deg);
         height: 44px;
         display: flex;
         align-items: center;
@@ -141,6 +143,14 @@
         margin-top: 30px;
         display: flex;
         white-space: nowrap;
+        &-list {
+            width: 222px;
+            height: 230px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;    
+            display: none;        
+        }
     }
 
     &__pagination {
