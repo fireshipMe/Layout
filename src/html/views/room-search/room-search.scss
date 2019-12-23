@@ -2,6 +2,9 @@
     width: 100%;
     height: 1355px;
     padding-bottom: 1px;
+    @media screen and (max-width: 1024px) {
+        justify-content: center;
+    }
     &__rooms {
         position: absolute;
         margin-left: 466px;
@@ -13,6 +16,15 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-row-gap: 20.5px;
         grid-column-gap: 12px;
+
+        @media screen and (max-width: 1300px) {
+            grid-template-columns: 1fr 1fr;
+        }
+    
+        @media screen and (max-width: 1024px) {
+            margin-left: 20vw;
+        }
+
     }
 
     &__header {
@@ -20,6 +32,9 @@
         margin-left: 466px;
         margin-top: 30px;
         white-space: nowrap;
+        @media screen and (max-width: 1024px) {
+            margin-left: 20vw;
+        }
     }
 
     &__filter {
@@ -28,6 +43,10 @@
         width: 266px;
         margin-top: 30px;
         margin-left: 140px;
+
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
     }
 
     &__date-dropdown {
@@ -157,5 +176,22 @@
         position: absolute;
         margin-left: 756px;
         margin-top: -142px;
+        @media screen and (max-width: 1300px) {
+            margin-top: 400px;
+            margin-left: 600px;
+        }
+        @media screen and (max-width: 1024px) {
+            margin-left: 40vw;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        margin-top: 76px;
+
+        @media screen and (max-width: 1300px) {
+            margin-top: 500px;
+        }
+        
     }
 }
